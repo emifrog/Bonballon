@@ -1,0 +1,1137 @@
+body {
+    color: #555;
+    font-size: 16px;
+    font-family: 'Open Sans', 'Montserrat';
+    background-color: #43474d;
+    overflow-wrap: break-word
+}
+
+p {
+    margin: 0;
+    line-height: 1.66em
+}
+
+a {
+    color: #8C0303;
+    cursor: pointer;
+}
+
+a:hover,
+a:focus {
+    color: #8C0303
+}
+
+.main-container img {
+    width: 100%;
+    height: auto
+}
+
+.k-font-14 {
+    font-size: 14px
+}
+
+.k-font-16 {
+    font-size: 16px
+}
+
+.k-font-18 {
+    font-size: 18px
+}
+
+.k-font-20 {
+    font-size: 20px
+}
+
+.k-txt-20 {
+    font-size: 20px
+}
+
+.bg-white {
+    background-color: #fff
+}
+
+.bg-grey {
+    background-color: #f0f0f0
+}
+
+.bg-dark-grey {
+    background-color: #43474d
+}
+
+.mt-10 {
+    margin-top: 10px
+}
+
+.mt-20 {
+    margin-top: 20px
+}
+
+.c-grey-2 {
+    color: #999
+}
+
+.padding-bloc-small {
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+.padding-bloc {
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+.padding-btm {
+    padding-bottom: 20px
+}
+
+.padding-top {
+    padding-top: 20px
+}
+
+.padding-bloc-double {
+    padding-top: 40px;
+    padding-bottom: 40px
+}
+
+.padding-bloc-triple {
+    padding-top: 60px;
+    padding-bottom: 60px
+}
+
+.margin-btm-small {
+    margin-bottom: 15px
+}
+
+.padding-l-small {
+    padding-left: 10px
+}
+
+.padding-lr-5 {
+    padding-left: 5px;
+    padding-right: 5px
+}
+
+.pr-15 {
+    padding-right: 15px
+}
+
+.pr-5 {
+    padding-right: 5px
+}
+
+.divider {
+    border-top: 1px solid #dedede
+}
+
+.divider-dark {
+    border-top: 1px solid #999
+}
+
+.cur-pt {
+    cursor: pointer
+}
+
+.list-page>li {
+    line-height: 1.66em
+}
+
+.float-left {
+    float: left
+}
+
+.float-right {
+    float: right
+}
+
+.scroll-to-top {
+    display: none;
+    position: fixed;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    right: 30px;
+    bottom: 30px;
+    font-size: 20px;
+    line-height: 36px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .3);
+    cursor: pointer;
+    z-index: 300;
+    -webkit-transition: background-color 0.2s ease-in-out 0s;
+    -o-transition: background-color 0.2s ease-in-out 0s;
+    transition: background-color 0.2s ease-in-out 0s
+}
+
+.scroll-to-top:hover {
+    background-color: #8C0303
+}
+
+.cookies-privacy {
+    background-color: rgba(50, 50, 50, .95);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    z-index: 100
+}
+
+.cookies-privacy p {
+    color: white;
+    margin-top: 5px;
+    font-size: 14px
+}
+
+.cookies-privacy button {
+    padding-left: 30px;
+    padding-right: 30px
+}
+
+label {
+    font-size: 14px
+}
+
+h1 {
+    margin-bottom: 20px
+}
+
+.form-control {
+    font-size: 18px;
+    border-radius: 0;
+    border: 1px solid #ccc;
+    height: auto
+}
+
+.tooltip-inner {
+    border-radius: 0
+}
+
+.alert {
+    border: none;
+    border-radius: 0;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.alert-danger {
+    color: #fff;
+    background-color: #8C0303
+}
+
+.alert-bloc {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.modal-content {
+    border-radius: 0
+}
+
+.modal-body {
+    padding: 30px 15px
+}
+
+.modal-body {
+    overflow-y: auto;
+    max-height: calc(100vh - 160px)
+}
+
+.pagination>li:first-child>a,
+.pagination>li:first-child>span,
+.pagination>li:last-child>a,
+.pagination>li:last-child>span {
+    border-radius: 0
+}
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+    background-color: #999;
+    border-color: #999
+}
+
+.pagination>li>a,
+.pagination>li>span {
+    color: #999
+}
+
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
+    color: #999
+}
+
+.btn {
+    border-radius: 0;
+    color: #fff;
+    border: none;
+    transition: background-color 0.1s ease-in-out 0s
+}
+
+.orange-btn {
+    background-color: #8C0303;
+    font-weight: 700
+}
+
+.orange-btn:hover,
+.orange-btn:focus {
+    color: #fff;
+    background-color: #da3d3d
+}
+
+.grey-btn {
+    background-color: #999;
+    font-weight: 700
+}
+
+.grey-btn:hover,
+.grey-btn:focus {
+    color: #fff;
+    background-color: #858585
+}
+
+.small-keamk-btn {
+    padding: 8px 12px;
+    font-size: 12px
+}
+
+.middle-keamk-btn {
+    padding: 12px 22px;
+    font-size: 16px
+}
+
+.large-keamk-btn {
+    padding: 18px 60px;
+    font-size: 16px
+}
+
+.btn-in-row .btn {
+    margin-right: 5px
+}
+
+.navbar {
+    margin-bottom: 0;
+    font-size: 14px;
+    background-color: #fff;
+    background-image: none;
+    border: none;
+    box-shadow: none
+}
+
+.navbar-brand {
+    padding: 0;
+    height: 80px
+}
+
+.navbar-brand>img {
+    height: 100%;
+    /*padding: 21px 15px 21px 15px;*/
+    width: auto
+}
+
+.navbar-toggle {
+    border-color: #23468C;
+    border-width: 2px;
+    padding: 10px;
+    margin: 22px 15px 22px 0;
+    color: #fff
+}
+
+.navbar-toggle:hover {
+    background-color: #fff
+}
+
+.navbar-toggle .icon-bar {
+    background-color: #23468C
+}
+
+.nav>li>a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #23468C;
+    font-weight: 600;
+    text-shadow: none;
+    transition: color 0.1s ease-in-out 0s
+}
+
+.nav>li>a:hover,
+.nav>li>a:focus,
+.nav>.open>a,
+.nav>.open>a:focus,
+.nav>.open>a:hover {
+    color: #8C0303;
+    background: none
+}
+
+.nav>li>a.active {
+    font-weight: 700
+}
+
+.dropdown-menu {
+    border-radius: 0
+}
+
+.dropdown-menu>li>a {
+    padding: 8px 20px
+}
+
+.dropdown-menu>li>a:hover {
+    color: #8C0303;
+    background: none
+}
+
+.footer-first {
+    background-color: #3d4045
+}
+
+.footer-second {
+    color: #8c8e91;
+    background-color: #43474d
+}
+
+.footer-first .list-inline>li {
+    padding-right: 15px;
+    padding-left: 15px
+}
+
+.ul-social>li>a>span {
+    display: inline-block;
+    background-color: #666;
+    color: #fff;
+    font-size: 24px;
+    line-height: 48px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: background-color 0.1s ease-in-out 0s
+}
+
+.ul-social>li>a>span:hover {
+    background-color: #f97352
+}
+
+.ul-footer {
+    padding-bottom: 40px
+}
+
+.ul-footer a {
+    color: #999;
+    transition: color 0.1s ease-in-out 0s
+}
+
+.ul-footer a:hover {
+    color: #f97352
+}
+
+.home-pres h1 {
+    font-weight: 700
+}
+
+.home-pres>p {
+    color: #777
+}
+
+.home-pres a,
+.home-domains a,
+.home-features-button a {
+    letter-spacing: 3px
+}
+
+.homepage h3 {
+    font-size: 20px;
+    font-weight: 700
+}
+
+.home-options img {
+    padding: 40px 60px 0 60px
+}
+
+.home-domains span {
+    display: inline-block;
+    margin-top: 40px;
+    background-color: #f97352;
+    color: #fff;
+    font-size: 48px;
+    line-height: 96px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%
+}
+
+.home-features .fa {
+    color: #f97352;
+    font-size: 48px;
+    margin-top: 40px
+}
+
+.homepage p {
+    color: #666
+}
+
+.white-label {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff
+}
+
+.choosemix input,
+.gender-participant input,
+.gender-player input,
+.level-participant input,
+.level-player input,
+.gender-participant,
+.level-participant,
+.list-banned input,
+#comment-form,
+#import-participant,
+#import-team,
+#import-list-team,
+#import-list-player {
+    display: none
+}
+
+.choosemix label {
+    width: 120px;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px 10px;
+    font-weight: 400;
+    margin-right: 4px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    color: #fff;
+    background-color: #43474d;
+    transition: background-color 0.2s ease-in-out 0s, color 0.2s ease-in-out 0s
+}
+
+.choosemix label:hover {
+    background-color: #fff;
+    color: #43474d
+}
+
+.choosemix input:checked+label {
+    color: #43474d;
+    background-color: #fff
+}
+
+.head-label {
+    font-size: 20px
+}
+
+.head-select {
+    font-size: 16px;
+    padding: 4px;
+    margin-right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0
+}
+
+.import-icon {
+    font-size: 20px;
+    padding: 0 10px;
+    color: #999;
+    cursor: pointer
+}
+
+.import-icon:hover {
+    color: #858585
+}
+
+.textarea-import {
+    resize: vertical
+}
+
+.participant-div,
+.team-div,
+.more-input,
+.list-team-item,
+.list-player-item {
+    padding-top: 8px
+}
+
+.input-participants,
+.input-teams {
+    font-size: 18px
+}
+
+.gender-participant label,
+.level-participant label,
+.level-player label,
+.result-option,
+.gender-player label,
+.list-banned label {
+    width: 36px;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-weight: 400;
+    cursor: pointer;
+    color: #999;
+    background-color: #fff;
+    margin-bottom: 0
+}
+
+.level-participant,
+.gender-participant,
+.level-player,
+.result-option,
+.gender-player,
+.list-banned {
+    margin-top: 4px
+}
+
+.gender-participant .gender-male label:hover,
+.gender-participant .gender-male input:checked+label,
+.r-male {
+    background-color: #26ade4;
+    color: #fff
+}
+
+.gender-participant .gender-female label:hover,
+.gender-participant .gender-female input:checked+label,
+.r-female {
+    background-color: #ff6370;
+    color: #fff
+}
+
+.player-gender-m:checked+label,
+.player-gender-m+label:hover {
+    background-color: #26ade4 !important;
+    color: #fff !important
+}
+
+.player-gender-f:checked+label,
+.player-gender-f+label:hover {
+    background-color: #ff6370 !important;
+    color: #fff !important
+}
+
+.level-hover {
+    background-color: #f97352 !important;
+    color: #fff !important
+}
+
+.p-dark {
+    color: #999
+}
+
+.input-group-addon {
+    background: none;
+    border-radius: 0;
+    color: #c9c9c9;
+    padding: 6px 10px
+}
+
+.delete-player,
+.delete-team,
+.list-team-item-remove,
+.list-player-item-remove,
+.list-banned {
+    cursor: pointer
+}
+
+.delete-player:hover,
+.delete-team:hover,
+.list-team-item-remove:hover,
+.list-player-item-remove:hover {
+    color: #999
+}
+
+#countPlayers,
+#countTeams,
+.counter-square {
+    display: inline-block;
+    font-size: 12px;
+    padding: 8px 12px;
+    background-color: #c9c9c9;
+    vertical-align: middle;
+    color: #fff;
+    font-weight: 700;
+    cursor: default
+}
+
+.no-padding-left {
+    padding-left: 0
+}
+
+.result-administration {
+    color: #999;
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+.result-title {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700
+}
+
+.result-date {
+    color: #999
+}
+
+.result-team {
+    font-size: 18px;
+    font-weight: 700
+}
+
+.result-btn-final {
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 20px;
+    font-weight: 400;
+    border: 2px solid #fff;
+    border-radius: 0;
+    cursor: pointer;
+    color: #fff;
+    background-color: #43474d;
+    transition: background-color 0.2s ease-in-out 0s, color 0.2s ease-in-out 0s
+}
+
+.result-btn-final:hover {
+    background-color: #fff;
+    color: #43474d
+}
+
+.copytoclip {
+    color: #999;
+    cursor: pointer
+}
+
+.copytoclip:hover {
+    color: #858585
+}
+
+.grey-label {
+    color: #999
+}
+
+.small-label {
+    font-weight: 400
+}
+
+.share-external {
+    padding-left: 5px
+}
+
+.result-option {
+    cursor: default
+}
+
+.r-level {
+    background-color: #f97352;
+    color: #fff
+}
+
+.res-opa-1 {
+    opacity: 1
+}
+
+.res-opa-05 {
+    opacity: 0.5
+}
+
+.res-lastline {
+    margin-top: 6px;
+    color: #999;
+    cursor: default
+}
+
+.result-count-total {
+    width: 34px;
+    text-align: center
+}
+
+.result-task-bar a {
+    display: inline-block;
+    font-size: 24px;
+    padding: 0 10px;
+    color: #999;
+    cursor: pointer;
+    border: 1px solid transparent
+}
+
+.result-task-bar a:hover,
+.share-external:hover {
+    color: #858585;
+    text-decoration: none
+}
+
+.result-btns span,
+.result-btn-final span {
+    padding-left: 10px
+}
+
+.k-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin-bottom: -6px;
+    margin-right: 5px
+}
+
+.k-switch input {
+    display: none
+}
+
+.k-slider {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    font-size: 10px;
+    color: #fff;
+    padding-top: 5px
+}
+
+.r-off {
+    padding-right: 4px
+}
+
+.r-on {
+    padding-left: 5px
+}
+
+.k-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #f0f0f0;
+    transition: 0.4s
+}
+
+.k-switch input:checked+.k-slider {
+    background-color: #999
+}
+
+.k-switch input:checked+.k-slider:before {
+    transform: translateX(22px)
+}
+
+.r-num-pt {
+    color: #999;
+    font-weight: 400;
+    cursor: default
+}
+
+.r-input {
+    font-size: 18px;
+    height: auto;
+    border: 1px solid #ccc;
+    line-height: 1.42857143
+}
+
+.r-rank {
+    float: left;
+    width: 38px;
+    padding: 6px 0;
+    text-align: center;
+    background-color: transparent;
+    border-right: 1px solid transparent;
+    color: #c9c9c9
+}
+
+.r-name {
+    padding: 6px 12px;
+    color: #555;
+    background-color: #fff;
+    margin-left: 37px
+}
+
+.embed-code {
+    font-size: 14px
+}
+
+.comment-nbr-comments {
+    font-size: 18px
+}
+
+.comment-form input,
+.comment-form textarea {
+    font-size: 16px
+}
+
+.comment-view {
+    padding: 10px 12px;
+    margin-bottom: 6px
+}
+
+.comment-view-del a {
+    color: #999;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 15px
+}
+
+.comment-view-bar a:hover {
+    color: #858585
+}
+
+.k-fa-grey {
+    color: #999;
+    cursor: pointer
+}
+
+.k-fa-grey:hover {
+    color: #858585
+}
+
+.about-support .btn {
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px
+}
+
+.about-support p {
+    color: #999;
+    margin-bottom: 10px
+}
+
+.about-support a:hover,
+.about-support a:focus {
+    color: #fff
+}
+
+.about-logo img {
+    margin-bottom: 10px;
+    border: 1px solid #dedede
+}
+
+.about-logo>div {
+    margin-bottom: 50px
+}
+
+.contact-type span {
+    font-size: 50px
+}
+
+.contact-type h3 {
+    margin-bottom: 60px
+}
+
+.ex-header {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.ex-overlay {
+    background-color: rgba(0, 0, 0, 0.75)
+}
+
+.ex-header h1 {
+    font-weight: 700;
+    padding-top: 140px;
+    color: #fff
+}
+
+.ex-header p {
+    font-size: 18px;
+    color: #fff
+}
+
+.ex-list-title {
+    background-color: #fff;
+    padding: 10px;
+    font-size: 14px;
+    margin: 0
+}
+
+.accept-term {
+    font-size: 12px;
+    color: #999
+}
+
+.social-connect {
+    margin-bottom: 20px
+}
+
+.social-connect>a {
+    margin-bottom: 10px
+}
+
+.social-connect>a:hover,
+.social-connect>a:focus {
+    color: #fff
+}
+
+.google-connect {
+    background-color: #dd4b39
+}
+
+.facebook-connect {
+    background-color: #3b5998
+}
+
+.twitter-connect {
+    background-color: #00aced
+}
+
+.donate-radio {
+    margin-top: 15px;
+    margin-bottom: 15px
+}
+
+.donate-radio input {
+    display: none
+}
+
+.donate-radio label {
+    text-align: center;
+    width: 100%
+}
+
+.donate-radio .active,
+.donate-radio label:hover {
+    background-color: #26ade4;
+    color: #fff
+}
+
+.donate-btn {
+    width: 100%
+}
+
+#other-amount {
+    display: none;
+    margin-top: -15px;
+    margin-bottom: 15px
+}
+
+.list-banned label {
+    background-color: #f0f0f0;
+    color: #c9c9c9
+}
+
+.list-banned input:checked+label {
+    color: #fe4e50
+}
+
+.list-reset-g-l a {
+    color: #c9c9c9
+}
+
+.list-reset-g-l {
+    padding-top: 6px
+}
+
+.features ul {
+    line-height: 1.66em
+}
+
+.features i {
+    margin-right: 5px;
+    color: #f97352
+}
+
+.features li:before {
+    font-family: 'FontAwesome';
+    content: '\f00c';
+    margin-right: 8px;
+    color: #f97352
+}
+
+.pub-c {
+    border: solid 1px #ccc
+}
+
+.error-custom {
+    color: #999
+}
+
+.error-custom h1 {
+    color: #fff
+}
+
+.ad-div {
+    text-align: center
+}
+
+.ad-div img {
+    width: auto
+}
+
+.ad-col {
+    text-align: left
+}
+
+@media (max-width:991px) {
+    .scroll-to-top {
+        display: none !important
+    }
+
+    .participant-div-form .no-padding-left,
+    #list-player-wrapper .no-padding-left,
+    #list-team-wrapper .no-padding-left {
+        padding-left: 15px
+    }
+
+    .teams-block {
+        padding-top: 40px
+    }
+
+    .final-draw-block {
+        text-align: left
+    }
+
+    .final-draw-block a {
+        margin-top: 20px
+    }
+
+    .result-btns a {
+        margin-top: 15px
+    }
+
+    .comment-right {
+        text-align: left
+    }
+
+    .delete_account_btn {
+        float: none !important
+    }
+
+    .profile-btns a {
+        margin-top: 15px
+    }
+
+    .ex-header h1 {
+        padding-top: 40px
+    }
+
+    .ad-col {
+        text-align: center
+    }
+}
+
+@media (max-width:767px) {
+    .nav>li>a {
+        padding-top: 16px;
+        padding-bottom: 16px
+    }
+
+    .dropdown-menu>li>a {
+        color: #fff
+    }
+
+    .ex-list-examples,
+    .ex-next {
+        text-align: left
+    }
+}
