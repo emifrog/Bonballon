@@ -1,258 +1,190 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-
-<!-- Mirrored from www.keamk.com/fr/examples by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 05 Sep 2023 13:00:55 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43879142-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-43879142-2');
-    </script>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.keamk.com/favicon.ico?19012901" />
-    <link rel="apple-touch-icon" type="image/png" href="../apple-touch-icon172f.png?19012901">
-    <meta name="description" content="">
-    <meta property="og:image" content="https://www.keamk.com/images/og-facebook-vertical-200.png" />
-    <title>Exemples - Keamk</title>
 
+    <meta name="description" content="Bonballon, le générateur d&#039;équipes aléatoires.">
+
+    <title>Générateur d&#039;équipes aléatoires - Bonballon</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="128x128" href="images/favicon.png">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CMontserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700%7CMontserrat' rel='stylesheet' type='text/css'>
 
-            <link type="text/css" rel="stylesheet" href="../css/7b5576e172f.css?19012901" media="all"/>
-    
-            <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-7854142479910574",
-        enable_page_level_ads: true
-    });
-    </script>
+    <link type="text/css" rel="stylesheet" href="css/style.css" media="all"/>  
+
 </head>
 
 <body>
 
-<!-- Static navbar -->
-<header class="navbar navbar-custom nav-bar-default navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"><img
-                        src="../images/keamk-logo172f.png?19012901" alt="Logo Keamk"></a>
+    <!-- Static navbar -->
+    <header class="navbar navbar-custom nav-bar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Logo Bonballon"></a>
+            </div>
+            <nav id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="about.html">A propos</a></li>
+                    <li><a href="features.html">Fonctionnalités</a></li>
+                    <li><a href="examples.html">Exemples</a></li>
+                    <li class="nav-pipe"><a href="login.html">Connexion</a></li>
+                    <li><a href="register.html">Inscription</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav id="navbar" class="navbar-collapse collapse">
+    </header>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="random-team-generator.html">Créer des équipes</a></li>
-                <li><a href="features.html">Fonctionnalités</a></li>
-                <li><a href="examples.html">Exemples</a></li>
-                                    <li class="nav-pipe"><a href="login.html">Connexion</a></li>
-                    <li><a href="register/index.html">Inscription</a></li>
-                                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-   aria-expanded="false">
-    <i class="fa fa-globe"></i>
-                        Fr     <span class="caret"></span></a>
+    <div class="main-container">
 
-<ul class="dropdown-menu">
-                        <li>
-                <a href="https://www.keamk.com/examples">English</a>
-            </li>
-                        
-</ul>                </li>
-                            </ul>
-        </nav>
-        <!--/.nav-collapse -->
-    </div>
-</header>
 
-<div class="main-container">
-
-    
 
         <div class="bg-white">
-        <div class="container padding-top ad-div">
-                <!-- leaderboard-top -->
-    <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7854142479910574"
-     data-ad-slot="8147175496"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+            <div class="container text-center">
+                <h1>
+                    Exemples
+                </h1>
+                <p class="padding-btm">
+                    De nombreuses manières d&#039;utiliser Bonballon
+                </p>
+            </div>
         </div>
 
-        <div class="container text-center">
-            <h1>
-                Exemples
-            </h1>
-            <p class="padding-btm">
-                De nombreuses manières d&#039;utiliser Keamk
-            </p>
-        </div>
-    </div>
+        <div class="bg-grey">
+            <div class="container">
 
-    <div class="bg-grey">
-        <div class="container">
+                <div class="padding-bloc-double text-center">
 
-            <div class="padding-bloc-double text-center">
-                                
-                <div class="row">
-                                                                                    <div class="row">
-                    
-                    <div class="col-sm-3 col-xs-6 padding-bloc-small">
-                        <a href="https://www.keamk.com/examples/random-basketball-teams">
-                            <img src="../images/example/basketball-list172f.jpg?19012901" alt="Basketball : équipes équilibrées" />
-                            <h5 class="ex-list-title text-left">
-                                Basketball : équipes équilibrées
-                            </h5>
-                        </a>
+                    <div class="row">
+                        <div class="row">
+
+                            <div class="col-sm-3 col-xs-6 padding-bloc-small">
+                                <a href="#">
+                                    <img src="images/example/basketball-list172f.jpg"
+                                        alt="Basketball : équipes équilibrées" />
+                                    <h5 class="ex-list-title text-left">
+                                        Basketball : équipes équilibrées
+                                    </h5>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-3 col-xs-6 padding-bloc-small">
+                                <a href="#">
+                                    <img src="images/example/potluck-list172f.jpg"
+                                        alt="Organiser un dîner type auberge espagnole ou potluck (qui apporte quoi ?)" />
+                                    <h5 class="ex-list-title text-left">
+                                        Organiser un dîner type auberge espagnole ou potluck (qui apporte quoi ?)
+                                    </h5>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-3 col-xs-6 padding-bloc-small">
+                                <a href="#">
+                                    <img src="images/example/tennis-list172f.jpg"
+                                        alt="Tennis : équipes de double mixte" />
+                                    <h5 class="ex-list-title text-left">
+                                        Tennis : équipes de double mixte
+                                    </h5>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-3 col-xs-6 padding-bloc-small">
+                                <a href="#">
+                                    <img src="images/example/assign-task-list172f.jpg"
+                                        alt="Assigner aléatoirement des tâches dans un groupe de personnes" />
+                                    <h5 class="ex-list-title text-left">
+                                        Assigner aléatoirement des tâches dans un groupe de personnes
+                                    </h5>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-sm-3 col-xs-6 padding-bloc-small">
+                                <a href="#">
+                                    <img src="images/example/futsal-list172f.jpg" alt="Futsal / Foot 5" />
+                                    <h5 class="ex-list-title text-left">
+                                        Futsal / Foot 5
+                                    </h5>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-3 col-xs-6 padding-bloc-small">
+                                <a href="#">
+                                    <img src="images/example/dinner-list172f.jpg"
+                                        alt="Plan de table pour dîner, évènement ou mariage" />
+                                    <h5 class="ex-list-title text-left">
+                                        Plan de table pour dîner, évènement ou mariage
+                                    </h5>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-3 col-xs-6 padding-bloc-small">
+                                <a href="#">
+                                    <img src="images/example/board-game-list172f.jpg"
+                                        alt="Équipes pour jeux de société" />
+                                    <h5 class="ex-list-title text-left">
+                                        Équipes pour jeux de société
+                                    </h5>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-3 col-xs-6 padding-bloc-small">
+                                <a href="#">
+                                    <img src="images/example/pingpong-list172f.jpg"
+                                        alt="PingPong" />
+                                    <h5 class="ex-list-title text-left">
+                                        Ping-Pong
+                                    </h5>
+                                </a>
+                            </div>
+
+                        </div>
                     </div>
 
-                                                        
-                    <div class="col-sm-3 col-xs-6 padding-bloc-small">
-                        <a href="https://www.keamk.com/examples/potluck-dinner-party">
-                            <img src="../images/example/potluck-list172f.jpg?19012901" alt="Organiser un dîner type auberge espagnole ou potluck (qui apporte quoi ?)" />
-                            <h5 class="ex-list-title text-left">
-                                Organiser un dîner type auberge espagnole ou potluck (qui apporte quoi ?)
-                            </h5>
-                        </a>
-                    </div>
-
-                                                        
-                    <div class="col-sm-3 col-xs-6 padding-bloc-small">
-                        <a href="https://www.keamk.com/examples/random-tennis-teams">
-                            <img src="../images/example/tennis-list172f.jpg?19012901" alt="Tennis : équipes de double mixte" />
-                            <h5 class="ex-list-title text-left">
-                                Tennis : équipes de double mixte
-                            </h5>
-                        </a>
-                    </div>
-
-                                                        
-                    <div class="col-sm-3 col-xs-6 padding-bloc-small">
-                        <a href="https://www.keamk.com/examples/randomly-assign-tasks">
-                            <img src="../images/example/assign-task-list172f.jpg?19012901" alt="Assigner aléatoirement des tâches dans un groupe de personnes" />
-                            <h5 class="ex-list-title text-left">
-                                Assigner aléatoirement des tâches dans un groupe de personnes
-                            </h5>
-                        </a>
-                    </div>
-
-                                                                                </div>                        <div class="row">
-                    
-                    <div class="col-sm-3 col-xs-6 padding-bloc-small">
-                        <a href="https://www.keamk.com/examples/futsal-five-a-side-football">
-                            <img src="../images/example/futsal-list172f.jpg?19012901" alt="Futsal / Foot 5" />
-                            <h5 class="ex-list-title text-left">
-                                Futsal / Foot 5
-                            </h5>
-                        </a>
-                    </div>
-
-                                                        
-                    <div class="col-sm-3 col-xs-6 padding-bloc-small">
-                        <a href="https://www.keamk.com/examples/dinner-wedding-planning">
-                            <img src="../images/example/dinner-list172f.jpg?19012901" alt="Plan de table pour dîner, évènement ou mariage" />
-                            <h5 class="ex-list-title text-left">
-                                Plan de table pour dîner, évènement ou mariage
-                            </h5>
-                        </a>
-                    </div>
-
-                                                        
-                    <div class="col-sm-3 col-xs-6 padding-bloc-small">
-                        <a href="https://www.keamk.com/examples/teams-for-board-games">
-                            <img src="../images/example/board-game-list172f.jpg?19012901" alt="Équipes pour jeux de société" />
-                            <h5 class="ex-list-title text-left">
-                                Équipes pour jeux de société
-                            </h5>
-                        </a>
-                    </div>
-
-                    </div>                                </div>
+                </div>
 
             </div>
-
         </div>
+
     </div>
 
-</div>
-
-<footer>
-    <div class="footer-first">
-        <div class="container text-center">
-
-            <ul class="list-inline ul-social padding-bloc-double row">
-                <li><a class="link-ext" href="https://www.facebook.com/keamkapp"><span><i class="fa fa-facebook"></i></span></a></li>
-                <li><a class="link-ext" href="https://twitter.com/keamkapp"><span><i class="fa fa-twitter"></i></span></a></li>
-            </ul>
-
-            <ul class="list-inline ul-footer row">
-                <li><a href="https://www.keamk.com/about">À propos</a></li>
-                <li><a href="https://www.keamk.com/donate">Soutenir Keamk</a></li>
-                <li><a href="https://www.keamk.com/contact">Contact</a></li>
-                <li><a href="https://www.keamk.com/terms-of-service">CGU</a></li>
-                <li><a href="https://www.keamk.com/privacy-policy">Politique de confidentialité</a></li>
-            </ul>
-
+    <footer>
+        <div class="footer-second padding-bloc">
+            <div class="container text-center k-font-14">
+                <p>&copy; 2023 Bonballon</p>
+                <p>Réalisé par <a class="link-ext" href="#">XR Web</a></p>
+            </div>
         </div>
-    </div>
-    <div class="footer-second padding-bloc">
-        <div class="container text-center k-font-14">
-            <p>&copy; 2023 Keamk</p>
-            <p>
-                                Réalisé par <a class="link-ext" href="https://www.cavalcode.com/">Fabien Morin</a>
-            </p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- Button to scroll to top -->
-<div class="scroll-to-top">
-    <i class="fa fa-angle-up"></i>
-</div>
+    <!-- Button to scroll to top -->
+    <div class="scroll-to-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-    <script src="../bundles/fosjsrouting/js/router172f.js?19012901"></script>
+    <script src="js/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/bundles/fosjsrouting/js/router172f.js"></script>
     <script src="https://www.keamk.com/js/routing"></script>
+    <script src="js/main.js"></script>  
 
-            <script src="../js/34e9723172f.js?19012901"></script>
-    
+</body>
 
-
-                <aside id="cookies-privacy" class="cookies-privacy padding-bloc">
-                    <div class="container">
-                        <div class="row">
-                            <p class="col-sm-10">Les cookies aident au bon fonctionnement de nos services. En utilisant Keamk, vous acceptez l'utilisation de cookies. <a href="https://www.keamk.com/privacy-policy">En savoir plus</a>
-</p>
-                            <div class="col-sm-2"><button id="cookiesPrivacyButton" class="btn grey-btn small-keamk-btn">OK</button></div>
-                        </div>
-                    </div>
-                </aside>
-                </body>
-
-<!-- Mirrored from www.keamk.com/fr/examples by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 05 Sep 2023 13:01:00 GMT -->
 </html>

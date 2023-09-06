@@ -154,7 +154,7 @@ a:focus {
     font-size: 20px;
     line-height: 36px;
     color: #fff;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: #23468C;
     cursor: pointer;
     z-index: 300;
     -webkit-transition: background-color 0.2s ease-in-out 0s;
@@ -423,7 +423,7 @@ h1 {
 }
 
 .ul-footer a:hover {
-    color: #f97352
+    color: #8C0303
 }
 
 .home-pres h1 {
@@ -452,7 +452,7 @@ h1 {
 .home-domains span {
     display: inline-block;
     margin-top: 40px;
-    background-color: #f97352;
+    background-color: #8C0303;
     color: #fff;
     font-size: 48px;
     line-height: 96px;
@@ -464,7 +464,7 @@ h1 {
 }
 
 .home-features .fa {
-    color: #f97352;
+    color: #8C0303;
     font-size: 48px;
     margin-top: 40px
 }
@@ -614,7 +614,7 @@ h1 {
 }
 
 .level-hover {
-    background-color: #f97352 !important;
+    background-color: #8C0303 !important;
     color: #fff !important
 }
 
@@ -1038,14 +1038,14 @@ h1 {
 
 .features i {
     margin-right: 5px;
-    color: #f97352
+    color: #8C0303
 }
 
 .features li:before {
     font-family: 'FontAwesome';
     content: '\f00c';
     margin-right: 8px;
-    color: #f97352
+    color: #8C0303
 }
 
 .pub-c {
