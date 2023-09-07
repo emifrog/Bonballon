@@ -445,7 +445,8 @@ h2 {
 .home-pres a,
 .home-domains a,
 .home-features-button a {
-    letter-spacing: 3px
+    /*letter-spacing: 3px;*/
+    margin-bottom: 40px;
 }
 
 .homepage h3 {
