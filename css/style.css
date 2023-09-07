@@ -99,7 +99,8 @@ a:focus {
 }
 
 .margin-btm-small {
-    margin-bottom: 15px
+    margin-bottom: 15px;
+    font-size: 20px;
 }
 
 .padding-l-small {
@@ -191,7 +192,14 @@ label {
 }
 
 h1 {
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #23468C;
+}
+
+h2 {
+    font-weight: 500;
+    color: #23468C;
 }
 
 .form-control {
