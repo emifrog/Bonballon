@@ -115,6 +115,6 @@
         }
     },
     "prefix": "fr__RG__",
-    "host": "www.bonballon.netlify.app",
+    "host": "bonballon.netlify.app",
     "scheme": "https"
 }
