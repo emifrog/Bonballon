@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Bonballon, le générateur d&#039;équipes aléatoires.">
+
+    <title>Générateur d&#039;équipes aléatoires - Bonballon</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="128x128" href="../images/favicon.png">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="../bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700%7CMontserrat' rel='stylesheet' type='text/css'>
+
+    <link type="text/css" rel="stylesheet" href="../css/style.css" media="all"/>  
+
+</head>
+
+<body>
+
+    <!-- Static navbar -->
+    <header class="navbar navbar-custom nav-bar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="../images/logo.png" alt="Logo Bonballon"></a>
+            </div>
+            <nav id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="about.html">A propos</a></li>
+                    <li><a href="features.html">Fonctionnalités</a></li>
+                    <li><a href="examples.html">Exemples</a></li>
+                    <li class="nav-pipe"><a href="login.html">Connexion</a></li>
+                    <li><a href="register.html">Inscription</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        <div class="bg-white">
+            <div class="container">
+                <h1 class="text-center">
+                    Connexion
+                </h1>
+            </div>
+        </div>
+
+        <div class="bg-grey">
+            <div class="container">
+
+                <div class="col-md-6 col-md-offset-3 padding-bloc-triple">
+
+                    <div class="text-center margin-btm-small">
+                        Se connecter avec
+                    </div>
+
+                    <div class="social-connect text-center">
+                        <a class="btn middle-keamk-btn facebook-connect" href="#">
+                            <span><i class="fa fa-facebook"></i>&nbsp;</span>
+                            Facebook
+                        </a>
+
+                        <a class="btn middle-keamk-btn google-connect" href="#">
+                            <span><i class="fa fa-google"></i>&nbsp;</span>
+                            Google
+                        </a>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="text-center padding-bloc margin-btm-small">
+                        Ou connectez-vous avec votre e-mail ou votre nom d&#039;utilisateur
+                    </div>
+
+
+                    <form action="#" method="post">
+
+                        <input type="hidden" name="_csrf_token" value="wunk6yJXFgM80N273anxmbGo5-p6SUOj3E2McG2_JoE" />
+
+                        <div class="form-group">
+                            <label for="username">Nom d&#039;utilisateur ou adresse e-mail</label>
+                            <input type="text" id="username" class="form-control" name="_username" value=""
+                                required="required" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" id="password" class="form-control" name="_password"
+                                required="required" />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                            <label for="remember_me">Se souvenir de moi</label>
+                        </div>
+
+                        <div>
+                            <input type="submit" id="_submit" class="btn orange-btn middle-keamk-btn" name="_submit"
+                                value="Connexion" />
+                        </div>
+
+                    </form>
+
+                    <div class="padding-bloc k-font-14">
+                        <a href="request.html">Mot de passe oublié ?</a>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="text-center padding-bloc-double">
+                        Nouveau sur Bonballon ? <a href="register.html">Inscrivez-vous !</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-second padding-bloc">
+            <div class="container text-center k-font-14">
+                <p>&copy; 2023 Bonballon</p>
+                <p>Réalisé par <a class="link-ext" href="#">XR Web</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Button to scroll to top -->
+    <div class="scroll-to-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="../js/bundles/fosjsrouting/js/router172f.js"></script>
+    <script src="https://bonballon.netlify.app/js/routing"></script>
+    <script src="../js/main.js"></script>  
+
+</body>
+
+</html>

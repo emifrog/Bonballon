@@ -8,15 +8,15 @@
     <meta name="description" content="Bonballon, le générateur d&#039;équipes aléatoires.">
 
     <title>Générateur d&#039;équipes aléatoires - Bonballon</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="128x128" href="images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="128x128" href="../images/favicon.png">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700%7CMontserrat' rel='stylesheet' type='text/css'>
 
-    <link type="text/css" rel="stylesheet" href="css/style.css" media="all"/>  
+    <link type="text/css" rel="stylesheet" href="../css/style.css" media="all"/>  
 
 </head>
 
@@ -33,7 +33,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Logo Bonballon"></a>
+                <a class="navbar-brand" href="index.html"><img src="../images/logo.png" alt="Logo Bonballon"></a>
             </div>
             <nav id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -49,12 +49,10 @@
 
     <div class="main-container">
 
-
-
         <div class="bg-white">
             <div class="container">
                 <h1 class="text-center">
-                    Connexion
+                    Inscription
                 </h1>
             </div>
         </div>
@@ -62,12 +60,10 @@
         <div class="bg-grey">
             <div class="container">
 
-
-
                 <div class="col-md-6 col-md-offset-3 padding-bloc-triple">
 
                     <div class="text-center margin-btm-small">
-                        Se connecter avec
+                        S&#039;inscrire avec
                     </div>
 
                     <div class="social-connect text-center">
@@ -80,62 +76,85 @@
                             <span><i class="fa fa-google"></i>&nbsp;</span>
                             Google
                         </a>
-
-                        <a class="btn middle-keamk-btn twitter-connect" href="#">
-                            <span><i class="fa fa-twitter"></i>&nbsp;</span>
-                            Twitter
-                        </a>
                     </div>
 
                     <div class="divider"></div>
 
                     <div class="text-center padding-bloc margin-btm-small">
-                        Ou connectez-vous avec votre e-mail ou votre nom d&#039;utilisateur
+                        Ou créez un compte avec votre e-mail
                     </div>
 
+                    <form name="fos_user_registration_form" method="post" action="register.html"
+                        class="fos_user_registration_register">
 
-                    <form action="#" method="post">
 
-                        <input type="hidden" name="_csrf_token" value="wunk6yJXFgM80N273anxmbGo5-p6SUOj3E2McG2_JoE" />
 
                         <div class="form-group">
-                            <label for="username">Nom d&#039;utilisateur ou adresse e-mail</label>
-                            <input type="text" id="username" class="form-control" name="_username" value=""
-                                required="required" />
+                            <label for="fos_user_registration_form_email" class="required">Adresse e-mail</label>
+                            <input type="email" id="fos_user_registration_form_email"
+                                name="fos_user_registration_form[email]" required="required" class="form-control" />
+
                         </div>
 
                         <div class="form-group">
-                            <label for="password">Mot de passe</label>
-                            <input type="password" id="password" class="form-control" name="_password"
-                                required="required" />
+                            <label for="fos_user_registration_form_username" class="required">Nom
+                                d&#039;utilisateur</label>
+                            <input type="text" id="fos_user_registration_form_username"
+                                name="fos_user_registration_form[username]" required="required" maxlength="180"
+                                pattern=".{2,}" class="form-control" />
+
                         </div>
 
                         <div class="form-group">
-                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-                            <label for="remember_me">Se souvenir de moi</label>
+                            <label for="fos_user_registration_form_plainPassword_first" class="required">Mot de
+                                passe</label>
+                            <input type="password" id="fos_user_registration_form_plainPassword_first"
+                                name="fos_user_registration_form[plainPassword][first]" required="required"
+                                autocomplete="new-password" class="form-control" />
+
                         </div>
 
-                        <div>
-                            <input type="submit" id="_submit" class="btn orange-btn middle-keamk-btn" name="_submit"
-                                value="Connexion" />
+                        <div class="form-group">
+                            <label for="fos_user_registration_form_plainPassword_second" class="required">Répéter le mot
+                                de passe</label>
+                            <input type="password" id="fos_user_registration_form_plainPassword_second"
+                                name="fos_user_registration_form[plainPassword][second]" required="required"
+                                autocomplete="new-password" class="form-control" />
+                        </div>
+
+                        <!--<div class="form-group">
+                            <script src="../../../www.google.com/recaptcha/api7d7c.js?hl=fr" async defer></script>
+                            <div class="g-recaptcha" data-sitekey="6LezvqYUAAAAAKhcNIqO6pKQfXTN3D0mtRt1tUk4"></div>
+                        </div>-->
+
+                        <input type="hidden" id="fos_user_registration_form__token"
+                            name="fos_user_registration_form[_token]"
+                            value="zj1CL_T3MpFFY4n4TrmZQxJViMglTPB9dS_5Iw3QR6w" />
+
+
+                        <div class="accept-term">
+                            En cliquant sur Créer un compte, vous acceptez les <a
+                                href="#">conditions générales d'utilisation</a> et
+                            la <a href="#">politique de confidentialité</a>.
+                        </div>
+
+                        <div class="padding-bloc">
+                            <input type="submit" class="btn orange-btn middle-keamk-btn" value="Créer un compte" />
                         </div>
 
                     </form>
 
-                    <div class="padding-bloc k-font-14">
-                        <a href="request.html">Mot de passe oublié ?</a>
-                    </div>
-
                     <div class="divider"></div>
 
                     <div class="text-center padding-bloc-double">
-                        Nouveau sur Bonballon ? <a href="register.html">Inscrivez-vous !</a>
+                        Déjà inscrit sur Bonballon ? <a href="login.html">Connectez-vous</a>
                     </div>
 
                 </div>
 
             </div>
         </div>
+
 
     </div>
 
@@ -156,11 +175,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery/1.11.3/jquery.min.js"></script>
-    <script src="bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="js/bundles/fosjsrouting/js/router172f.js"></script>
+    <script src="../js/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="../js/bundles/fosjsrouting/js/router172f.js"></script>
     <script src="https://bonballon.netlify.app/js/routing"></script>
-    <script src="js/main.js"></script>  
+    <script src="../js/main.js"></script>   
 
 </body>
 
