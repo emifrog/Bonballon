@@ -1088,9 +1088,9 @@ h2 {
 }
 
 @media (max-width:991px) {
-    .scroll-to-top {
+    /*.scroll-to-top {
         display: none !important
-    }
+    }*/
 
     .participant-div-form .no-padding-left,
     #list-player-wrapper .no-padding-left,
