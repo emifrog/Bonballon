@@ -144,6 +144,12 @@ a:focus {
     float: right
 }
 
+.fa-star {
+    font-size: 40px;
+    color: #8C0303;
+    margin-top: 10px;
+}
+
 .scroll-to-top {
     display: none;
     position: fixed;
