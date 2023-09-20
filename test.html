@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43879142-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-43879142-2');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?19012901" />
+    <link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon.png?19012901">
+    <meta name="description" content="Keamk, le générateur d&#039;équipes aléatoires. 
+    Créez des groupes aléatoires et équilibrés basés sur le niveau ou le genre des participants.">
+    <meta property="og:image" content="https://www.keamk.com/images/og-facebook-vertical-200.png" />
+    <title>test - Keamk</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CMontserrat' rel='stylesheet'
+        type='text/css'>
+
+    <link type="text/css" rel="stylesheet" href="/css/7b5576e.css?19012901" media="all" />
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-7854142479910574",
+            enable_page_level_ads: true
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Static navbar -->
+    <header class="navbar navbar-custom nav-bar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/fr/"><img src="/images/keamk-logo.png?19012901" alt="Logo Keamk"></a>
+            </div>
+            <nav id="navbar" class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/fr/random-team-generator">Créer des équipes</a></li>
+                    <li><a href="/fr/features">Fonctionnalités</a></li>
+                    <li><a href="/fr/examples">Exemples</a></li>
+                    <li class="nav-pipe"><a href="/fr/login">Connexion</a></li>
+                    <li><a href="/fr/register/">Inscription</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="fa fa-globe"></i>
+                            Fr <span class="caret"></span></a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/fr/6yhfnamyo1kjr78a?lang=en">English</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!--/.nav-collapse -->
+        </div>
+    </header>
+
+    <div class="main-container">
+
+
+
+
+
+
+        <div class="modal fade" id="deleteCommentModal" tabindex="-1" role="dialog"
+            aria-labelledby="deleteCommentModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-grey">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="deleteCommentModalLabel">Supprimer le commentaire</h4>
+                    </div>
+                    <div class="modal-body">
+                        Êtes-vous certain de vouloir supprimer ce commentaire ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn grey-btn small-keamk-btn" data-dismiss="modal">Annuler</button>
+                        <a href="" class="btn orange-btn small-keamk-btn my-modal-path">Supprimer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="embedMixModal" tabindex="-1" role="dialog" aria-labelledby="embedMixModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-grey">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="embedMixModalLabel">Code d&#039;intégration du tirage</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="padding-btm">
+                            Copier et coller le code HTML suivant :
+                        </p>
+
+                        <textarea class="form-control embed-code result-input-link"
+                            rows="2"><iframe src="https://www.keamk.com/fr/embed/6yhfnamyo1kjr78a" width="100%" height="500" frameborder="0"></iframe></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn grey-btn small-keamk-btn" data-dismiss="modal">Annuler</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container padding-top ad-div">
+            <!-- leaderboard-top -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7854142479910574"
+                data-ad-slot="8147175496" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+
+        <div class="bg-dark-grey">
+            <div class="container padding-bloc">
+
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="result-title">
+                            test
+                        </div>
+
+                        <div class="result-date k-font-14">
+
+                            Il y a 10 s -
+                            10 participants
+                            dans 2 équipes
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bg-white">
+            <div class="container padding-bloc">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="margin-btm-small">
+                            <label for="share-link-id" class="grey-label">Lien à partager </label>
+                            <div class="input-group">
+                                <input id="share-link-id" class="form-control result-input-link" type="text"
+                                    value="https://keamk.com/fr/6yhfnamyo1kjr78a">
+                                <span class="input-group-addon"><a class="copytoclip" data-toggle="tooltip"
+                                        data-placement="bottom" title="Copier dans le presse-papier"><span
+                                            data-original-title="Copié"><i
+                                                class="fa fa-clipboard"></i></span></a></span>
+                            </div>
+                        </div>
+
+                        <div class="result-task-bar">
+                            <ul class="list-inline">
+                                <li>
+                                    <a class="scroll-to" data-target="#comment-div" data-toggle="tooltip"
+                                        data-placement="bottom" title="0 Commentaire">
+                                        0 <i class="fa fa-comment"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/fr/export/6yhfnamyo1kjr78a" data-toggle="tooltip" data-placement="bottom"
+                                        title="Export Excel">
+                                        <i class="fa fa-file-excel-o"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="popup"
+                                        href="http://www.facebook.com/dialog/share?app_id=191957414602148&amp;display=popup&amp;href=https%3A%2F%2Fkeamk.com%2Ffr%2F6yhfnamyo1kjr78a"
+                                        data-toggle="tooltip" data-placement="bottom" title="Partager sur Facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="popup"
+                                        href="https://twitter.com/intent/tweet?text=test&amp;url=https%3A%2F%2Fkeamk.com%2Ffr%2F6yhfnamyo1kjr78a&amp;via=keamkapp"
+                                        data-toggle="tooltip" data-placement="bottom" title="Partager sur Twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="popup"
+                                        href="http://reddit.com/submit?url=https%3A%2F%2Fkeamk.com%2Ffr%2F6yhfnamyo1kjr78a&amp;title=test"
+                                        data-toggle="tooltip" data-placement="bottom" title="Partager sur Reddit">
+                                        <i class="fa fa-reddit-alien"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <span data-toggle="modal" data-target="#embedMixModal">
+                                        <a data-toggle="tooltip" data-placement="bottom"
+                                            title="Code d&#039;intégration">
+                                            <i class="fa fa-code"></i>
+                                        </a>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="bg-grey">
+            <div class="container padding-bloc">
+
+
+                <div class="row">
+
+                    <div class="col-md-5 padding-bloc">
+
+                        <div class="result-team">
+                            E1 <span class="r-num-pt" title="Participants">(5)</span>
+                        </div>
+
+                        <div class="row participant-div">
+                            <div class="col-xs-10">
+                                <div class="r-input r-rank">
+                                    1
+                                </div>
+                                <div class="r-input r-name">
+                                    4
+                                </div>
+                            </div>
+                            <div class="col-xs-2 no-padding-left">
+                            </div>
+                        </div>
+                        <div class="row participant-div">
+                            <div class="col-xs-10">
+                                <div class="r-input r-rank">
+                                    2
+                                </div>
+                                <div class="r-input r-name">
+                                    3
+                                </div>
+                            </div>
+                            <div class="col-xs-2 no-padding-left">
+                            </div>
+                        </div>
+                        <div class="row participant-div">
+                            <div class="col-xs-10">
+                                <div class="r-input r-rank">
+                                    3
+                                </div>
+                                <div class="r-input r-name">
+                                    10
+                                </div>
+                            </div>
+                            <div class="col-xs-2 no-padding-left">
+                            </div>
+                        </div>
+                        <div class="row participant-div">
+                            <div class="col-xs-10">
+                                <div class="r-input r-rank">
+                                    4
+                                </div>
+                                <div class="r-input r-name">
+                                    6
+                                </div>
+                            </div>
+                            <div class="col-xs-2 no-padding-left">
+                            </div>
+                        </div>
+                        <div class="row participant-div">
+                            <div class="col-xs-10">
+                                <div class="r-input r-rank">
+                                    5
+                                </div>
+                                <div class="r-input r-name">
+                                    1
+                                </div>
+                            </div>
+                            <div class="col-xs-2 no-padding-left">
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-5 padding-bloc">
+
+                        <div class="result-team">
+                            E2 <span class="r-num-pt" title="Participants">(5)</span>
+                        </div>
+
+                        <div class="row participant-div">
+                            <div class="col-xs-10">
+                                <div class="r-input r-rank">
+                                    1
+                                </div>
+                                <div class="r-input r-name">
+                                    2
+                                </div>
+                            </div>
+                            <div class="col-xs-2 no-padding-left">
+                            </div>
+                        </div>
+                        <div class="row participant-div">
+                            <div class="col-xs-10">
+                                <div class="r-input r-rank">
+                                    2
+                                </div>
+                                <div class="r-input r-name">
+                                    8
+                                </div>
+                            </div>
+                            <div class="col-xs-2 no-padding-left">
+                            </div>
+                        </div>
+                        <div class="row participant-div">
+                            <div class="col-xs-10">
+                                <div class="r-input r-rank">
+                                    3
+                                </div>
+                                <div class="r-input r-name">
+                                    7
+                                </div>
+                            </div>
+                            <div class="col-xs-2 no-padding-left">
+                            </div>
+                        </div>
+                        <div class="row participant-div">
+                            <div class="col-xs-10">
+                                <div class="r-input r-rank">
+                                    4
+                                </div>
+                                <div class="r-input r-name">
+                                    5
+                                </div>
+                            </div>
+                            <div class="col-xs-2 no-padding-left">
+                            </div>
+                        </div>
+                        <div class="row participant-div">
+                            <div class="col-xs-10">
+                                <div class="r-input r-rank">
+                                    5
+                                </div>
+                                <div class="r-input r-name">
+                                    9
+                                </div>
+                            </div>
+                            <div class="col-xs-2 no-padding-left">
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="ad-div padding-bloc">
+                    <!-- leaderboard-bottom -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7854142479910574"
+                        data-ad-slot="1275355822" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="divider">
+
+        </div>
+
+
+        <div class="bg-grey">
+            <div id="comment-div" class="container padding-bloc-double">
+                <div class="comment-nbr-comments padding-bloc-small">
+                    0 Commentaire
+                </div>
+                <div class="margin-btm-small">
+                    <a class="btn grey-btn small-keamk-btn toggle-it" data-target="#comment-form">Ajouter un
+                        commentaire</a>
+                </div>
+
+
+                <div id="comment-form" class="row">
+
+                    <div class="col-md-6 comment-form">
+                        <form name="comment" method="post" action="/fr/comment/add/6yhfnamyo1kjr78a" autocomplete="off">
+
+
+                            <div class="form-group">
+                                <label for="comment_userName" class="required">Nom</label>
+
+
+                                <input type="text" id="comment_userName" name="comment[userName]" required="required"
+                                    class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="comment_body" class="required">Commentaire</label> (<span
+                                    id="comment-char-left">500</span>)
+
+                                <textarea id="comment_body" name="comment[body]" required="required"
+                                    class="form-control" rows="6"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" class="btn orange-btn middle-keamk-btn" value="Poster" />
+                            </div>
+
+                            <input type="hidden" id="comment__token" name="comment[_token]"
+                                value="vvozkaKOVcXUdz5xd-mUTkA5itJzU2yu5LbCagKD9B8" />
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-first">
+            <div class="container text-center">
+
+                <ul class="list-inline ul-social padding-bloc-double row">
+                    <li><a class="link-ext" href="https://www.facebook.com/keamkapp"><span><i
+                                    class="fa fa-facebook"></i></span></a></li>
+                    <li><a class="link-ext" href="https://twitter.com/keamkapp"><span><i
+                                    class="fa fa-twitter"></i></span></a></li>
+                </ul>
+
+                <ul class="list-inline ul-footer row">
+                    <li><a href="/fr/about">À propos</a></li>
+                    <li><a href="/fr/donate">Soutenir Keamk</a></li>
+                    <li><a href="/fr/contact">Contact</a></li>
+                    <li><a href="/fr/terms-of-service">CGU</a></li>
+                    <li><a href="/fr/privacy-policy">Politique de confidentialité</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="footer-second padding-bloc">
+            <div class="container text-center k-font-14">
+                <p>&copy; 2023 Keamk</p>
+                <p>
+                    Réalisé par <a class="link-ext" href="https://www.cavalcode.com">Fabien Morin</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Button to scroll to top -->
+    <div class="scroll-to-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="/bundles/fosjsrouting/js/router.js?19012901"></script>
+    <script src="/fr/js/routing?callback=fos.Router.setData"></script>
+
+    <script src="/js/34e9723.js?19012901"></script>
+
+
+
+    <aside id="cookies-privacy" class="cookies-privacy padding-bloc">
+        <div class="container">
+            <div class="row">
+                <p class="col-sm-10">Les cookies aident au bon fonctionnement de nos services. En utilisant Keamk, vous
+                    acceptez l'utilisation de cookies. <a href="/fr/privacy-policy">En savoir plus</a>
+                </p>
+                <div class="col-sm-2"><button id="cookiesPrivacyButton" class="btn grey-btn small-keamk-btn">OK</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+</body>
+
+</html>
