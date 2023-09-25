@@ -1,7 +1,7 @@
 {
     "base_url": "",
     "routes": {
-        "fr__RG__comment_delete": {
+        "comment_delete": {
             "tokens": [
                 ["variable", "\/", "[^\/]++", "idComment"],
                 ["variable", "\/", "[^\/]++", "fullId"],
@@ -13,7 +13,7 @@
             "methods": [],
             "schemes": []
         },
-        "fr__RG__list_remove": {
+        "list_remove": {
             "tokens": [
                 ["variable", "\/", "\\d+", "id"],
                 ["variable", "\/", "player|team", "type"],
@@ -28,7 +28,7 @@
             "methods": [],
             "schemes": []
         },
-        "fr__RG__list_team_ajax": {
+        "list_team_ajax": {
             "tokens": [
                 ["text", "\/fr\/list\/team\/ajax"]
             ],
@@ -38,7 +38,7 @@
             "methods": [],
             "schemes": []
         },
-        "fr__RG__list_team_ajax_item": {
+        "list_team_ajax_item": {
             "tokens": [
                 ["variable", "\/", "\\d+", "id"],
                 ["text", "\/fr\/list\/team\/ajax"]
@@ -51,7 +51,7 @@
             "methods": [],
             "schemes": []
         },
-        "fr__RG__list_player_ajax": {
+        "list_player_ajax": {
             "tokens": [
                 ["text", "\/fr\/list\/participant\/ajax"]
             ],
@@ -61,7 +61,7 @@
             "methods": [],
             "schemes": []
         },
-        "fr__RG__list_player_ajax_item": {
+        "list_player_ajax_item": {
             "tokens": [
                 ["variable", "\/", "\\d+", "id"],
                 ["text", "\/fr\/list\/participant\/ajax"]
@@ -74,7 +74,7 @@
             "methods": [],
             "schemes": []
         },
-        "fr__RG__mix_hide_option": {
+        "hide_option": {
             "tokens": [
                 ["variable", "\/", "[^\/]++", "val"],
                 ["variable", "\/", "[a-z0-9]{24}", "id"],
@@ -88,7 +88,7 @@
             "methods": [],
             "schemes": []
         },
-        "fr__RG__mix_delete": {
+        "mix_delete": {
             "tokens": [
                 ["variable", "\/", "[a-z0-9]{24}", "fullId"],
                 ["text", "\/fr\/delete"]
@@ -101,7 +101,7 @@
             "methods": [],
             "schemes": []
         },
-        "fr__RG__mix_set_cookie": {
+        "mix_set_cookie": {
             "tokens": [
                 ["variable", "\/", "[^\/]++", "valueCookie"],
                 ["variable", "\/", "[^\/]++", "nameCookie"],
@@ -114,7 +114,6 @@
             "schemes": []
         }
     },
-    "prefix": "fr__RG__",
     "host": "bonballon.netlify.app",
     "scheme": "https"
 }
