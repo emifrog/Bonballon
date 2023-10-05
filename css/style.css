@@ -1134,6 +1134,12 @@ h2 {
     .ad-col {
         text-align: center
     }
+
+    .padding-bloc-double {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        text-align: center;
+    }
 }
 
 @media (max-width:767px) {
@@ -1149,5 +1155,11 @@ h2 {
     .ex-list-examples,
     .ex-next {
         text-align: left
+    }
+
+    .padding-bloc-double {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        text-align: center;
     }
 }
