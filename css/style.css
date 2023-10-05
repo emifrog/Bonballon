@@ -55,7 +55,7 @@ a:focus {
 }
 
 .bg-dark-grey {
-    background-color: #43474d
+    background-color: #23468C
 }
 
 .mt-10 {
@@ -404,7 +404,7 @@ h2 {
 
 .footer-second {
     color: #8c8e91;
-    background-color: #43474d
+    background-color: #23468C
 }
 
 .footer-first .list-inline>li {
@@ -521,7 +521,7 @@ h2 {
     border: 2px solid #fff;
     cursor: pointer;
     color: #fff;
-    background-color: #43474d;
+    background-color: #8C0303;
     transition: background-color 0.2s ease-in-out 0s, color 0.2s ease-in-out 0s
 }
 
