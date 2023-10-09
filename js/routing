@@ -1,5 +1,5 @@
 {
-    "base_url": "",
+    "base_url": "https://bonballon.netlify.app/",
     "routes": {
         "comment_delete": {
             "tokens": [
