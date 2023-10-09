@@ -1,5 +1,5 @@
 {
-    "base_url": ".",
+    "base_url": "",
     "routes": {
         "comment_delete": {
             "tokens": [
