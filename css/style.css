@@ -943,6 +943,12 @@ h2 {
     margin-bottom: 60px
 }
 
+.link-ext {
+    font-weight: bold;
+    color: #b90303;
+    text-decoration: none !important;
+}
+
 .ex-header {
     background-size: cover;
     background-position: center;
