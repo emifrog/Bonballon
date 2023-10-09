@@ -48,7 +48,7 @@ var Router = function () {
     function Router(context, routes) {
         _classCallCheck(this, Router);
 
-        this.context_ = context || { base_url: '', prefix: '', host: '', scheme: '' };
+        this.context_ = context || { base_url: '',  host: '', scheme: '' };
         this.setRoutes(routes || {});
     }
 
