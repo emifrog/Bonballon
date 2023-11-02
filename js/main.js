@@ -9,7 +9,7 @@
                     t(this).blur()
                 })
             };
-            keamkTooltip = function () {
+            bonballonTooltip = function () {
                 t('[data-toggle="tooltip"]').tooltip({
                     trigger: 'hover'
                 })
@@ -40,23 +40,6 @@
                     }
                 })
             };
-            johnFante = function () {
-                var e = 'contactcharlesbukowskikeamkjackkerouaccom',
-                    i = 'charlesbukowski',
-                    a = 'jackkerouac';
-                e = e.split(i);
-                e[0] += '@';
-                e = e[0].concat(e[1]);
-                e = e.split(a);
-                e[0] += '.';
-                e = e[0].concat(e[1]);
-                t('.john-fante').each(function () {
-                    t(this).html(e)
-                });
-                t('.ajohn-fante').each(function () {
-                    t(this).attr('href', 'mailto:' + e)
-                })
-            };
             setCookie = function (t, e, a) {
                 var i = new Date();
                 i.setTime(i.getTime() + (a * 24 * 60 * 60 * 1000));
@@ -65,7 +48,7 @@
             };
             init = function () {
                 extLink();
-                keamkTooltip();
+                bonballonTooltip();
                 toggleTarget();
                 scrollToTarget()
             };
