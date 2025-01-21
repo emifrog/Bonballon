@@ -1,0 +1,165 @@
+.results-container {
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.team-result {
+    background: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.team-result:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #f8f9fa;
+}
+
+.team-result h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e74c3c;
+    font-weight: 600;
+    text-align: center;
+}
+
+.team-result ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.team-result li {
+    padding: 12px 15px;
+    margin: 5px 0;
+    background: #f8f9fa;
+    border-radius: 4px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player-name {
+    font-weight: 500;
+}
+
+.level-badge {
+    background: #3498db;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.level-stars {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.level-stars i {
+    color: #ddd;
+    margin: 0 2px;
+    font-size: 14px;
+}
+
+.level-stars i.filled {
+    color: #8C0303;
+}
+
+.level-stars i.filled:nth-child(1)
+.level-stars i.filled:nth-child(2)
+.level-stars i.filled:nth-child(3)
+.level-stars i.filled:nth-child(4)
+.level-stars i.filled:nth-child(5) 
+
+.padding-bloc-result {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+#new-draw {
+    margin-bottom: 20px;
+    margin-right: 10px;
+    border-radius: 8px;
+    background-color: #23468C;
+    border-color: #23468C;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+#new-draw i {
+    font-size: 1.2em;
+    margin-right: 8px;
+}
+
+#new-draw:hover {
+    background-color: #1A5B9D;
+    border-color: #1A5B9D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#new-draw:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+#share-whatsapp {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    border-radius: 8px;
+    background-color: #25D366;
+    border-color: #25D366;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+#share-whatsapp i {
+    font-size: 1.2em;
+    margin-right: 8px;
+}
+
+#share-whatsapp:hover {
+    background-color: #128C7E;
+    border-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#share-whatsapp:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Styles pour l'impression */
+@media print {
+    .navbar, 
+    #new-draw,
+    #print-results {
+        display: none !important;
+    }
+
+    .team-result {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .level-badge {
+        border: 1px solid #3498db;
+        background: none;
+        color: #3498db;
+    }
+}

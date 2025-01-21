@@ -1,233 +1,257 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="description" content="Bonballon, le générateur d&#039;équipes aléatoires.">
-
-    <title>Générateur d&#039;équipes aléatoires - Bonballon</title>
+    <meta name="theme-color" content="#23468C">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Bonballon">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" sizes="128x128" href="images/favicon.png">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700%7CMontserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700%7CMontserrat' rel='stylesheet'
+        type='text/css'>
 
-    <link type="text/css" rel="stylesheet" href="css/style.css" media="all"/>  
+    <link type="text/css" rel="stylesheet" href="css/style.css" media="all" />
+
+
+    <title>Générateur d&#039;équipes aléatoires - Bonballon</title>
 
 </head>
 
 <body>
 
-<!-- Static navbar -->
-<header class="navbar navbar-custom nav-bar-default navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
+    <!-- Static navbar -->
+    <header class="navbar navbar-custom nav-bar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
                     aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Logo Bonballon"></a>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Logo Bonballon"></a>
+            </div>
+            <nav id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">A propos</a></li>
+                    <li><a href="features.html">Fonctionnalités</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">A propos</a></li>
-                <li><a href="features.html">Fonctionnalités</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    </header>
 
-<div class="main-container">    
+    <div class="main-container">
 
-    <div class="modal fade" id="mixListTeamModal" tabindex="-1" role="dialog" aria-labelledby="mixListTeamModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-grey">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="mixListTeamModalLabel">Listes d&#039;équipes</h4>
+        <div class="modal fade" id="mixListTeamModal" tabindex="-1" role="dialog"
+            aria-labelledby="mixListTeamModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-grey">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="mixListTeamModalLabel">Listes d&#039;équipes</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn grey-btn small-keamk-btn" data-dismiss="modal">Annuler</button>
+                    </div>
                 </div>
-            <div class="modal-body">
+            </div>
+        </div>
+        <div class="modal fade" id="mixListPlayerModal" tabindex="-1" role="dialog"
+            aria-labelledby="mixListPlayerModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-grey">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="mixListPlayerModalLabel">Listes de participants</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn grey-btn small-keamk-btn" data-dismiss="modal">Annuler</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form id="mix_form" name="mix" method="post" autocomplete="off" novalidate="novalidate">
+
+            <div class="bg-dark-grey">
+
+
+                <div class="container padding-bloc">
+
+                    <div class="row">
+
+                        <div id="div_mix_title" class="form-group col-md-6"
+                            data-error="Le champs &lt;strong&gt;Titre&lt;/strong&gt; ne doit pas être vide.">
+                            <label class="white-label required" for="mix_title">Titre de votre tirage</label>
+                            <input id="mix_title" name="mix[title]" required="required" maxlength="255"
+                                class="form-control" type="text" value="">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label class="white-label required">Type de tirage</label>
+                            <div id="mix_typeMix" class="choosemix">
+                                <input id="mix_typeMix_0" name="mix[typeMix]" required="required" value="0"
+                                    checked="checked" type="radio">
+                                <label for="mix_typeMix_0" class="required">Normal</label>
+                                <input id="mix_typeMix_2" name="mix[typeMix]" required="required" value="2"
+                                    type="radio">
+                                <label for="mix_typeMix_2" class="required">Niveau</label>
                             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn grey-btn small-keamk-btn" data-dismiss="modal">Annuler</button>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </div>
-</div><div class="modal fade" id="mixListPlayerModal" tabindex="-1" role="dialog" aria-labelledby="mixListPlayerModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header bg-grey">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="mixListPlayerModalLabel">Listes de participants</h4>
-            </div>
-            <div class="modal-body">
+
+            <div class="bg-grey">
+
+                <div class="container padding-bloc">
+
+                    <div id="mix_form_error"
+                        data-error="Vous devez au moins renseigner le &lt;strong&gt;premier Participant&lt;/strong&gt; et la &lt;strong&gt;première Équipe&lt;/strong&gt;.">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="head-select" id="nb-participants">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                    <option value="60">60</option>
+                                    <option value="61">61</option>
+                                    <option value="62">62</option>
+                                    <option value="63">63</option>
+                                    <option value="64">64</option>
+                                    <option value="65">65</option>
+                                    <option value="66">66</option>
+                                    <option value="67">67</option>
+                                    <option value="68">68</option>
+                                    <option value="69">69</option>
+                                    <option value="70">70</option>
+                                    <option value="71">71</option>
+                                    <option value="72">72</option>
+                                    <option value="73">73</option>
+                                    <option value="74">74</option>
+                                    <option value="75">75</option>
+                                    <option value="76">76</option>
+                                    <option value="77">77</option>
+                                    <option value="78">78</option>
+                                    <option value="79">79</option>
+                                    <option value="80">80</option>
+                                    <option value="81">81</option>
+                                    <option value="82">82</option>
+                                    <option value="83">83</option>
+                                    <option value="84">84</option>
+                                    <option value="85">85</option>
+                                    <option value="86">86</option>
+                                    <option value="87">87</option>
+                                    <option value="88">88</option>
+                                    <option value="89">89</option>
+                                    <option value="90">90</option>
+                                    <option value="91">91</option>
+                                    <option value="92">92</option>
+                                    <option value="93">93</option>
+                                    <option value="94">94</option>
+                                    <option value="95">95</option>
+                                    <option value="96">96</option>
+                                    <option value="97">97</option>
+                                    <option value="98">98</option>
+                                    <option value="99">99</option>
+                                    <option value="100">100</option>
+                                </select>
+                                <label for="nb-participants" class="head-label pr-15">Participants</label>
+                                <a class="import-icon toggle-it" data-target="#import-participant" data-toggle="tooltip"
+                                    data-placement="bottom" title="Copier-coller des participants"><i
+                                        class="fa fa-clipboard"></i></a>
+
                             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn grey-btn small-keamk-btn" data-dismiss="modal">Annuler</button>
-            </div>
-        </div>
-    </div>
-</div>
-<form id="mix_form" name="mix" method="post" autocomplete="off" novalidate="novalidate">
 
-<div class="bg-dark-grey">
+                            <div id="import-participant" class="form-group">
+                                <label for="import-participant-list">Copier et coller une liste de participants. Un
+                                    participant par ligne.</label>
+                                <textarea id="import-participant-list" class="form-control textarea-import"
+                                    rows="10"></textarea>
+                                <a id="import-p-button" class="btn orange-btn middle-keamk-btn">Importer les
+                                    participants</a>
+                            </div>
 
-
-    <div class="container padding-bloc">
-
-        <div class="row">
-
-            <div id="div_mix_title" class="form-group col-md-6" data-error="Le champs &lt;strong&gt;Titre&lt;/strong&gt; ne doit pas être vide.">
-                <label class="white-label required" for="mix_title">Titre de votre tirage</label>
-                <input id="mix_title" name="mix[title]" required="required" maxlength="255" class="form-control" type="text" value="">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label class="white-label required">Type de tirage</label>
-                <div id="mix_typeMix" class="choosemix">
-                    <input id="mix_typeMix_0" name="mix[typeMix]" required="required" value="0" checked="checked" type="radio">
-                    <label for="mix_typeMix_0" class="required">Normal</label>
-                    <input id="mix_typeMix_2" name="mix[typeMix]" required="required" value="2"  type="radio">
-                    <label for="mix_typeMix_2" class="required">Niveau</label>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-
-<div class="bg-grey">
-
-    <div class="container padding-bloc">
-
-        <div id="mix_form_error" data-error="Vous devez au moins renseigner le &lt;strong&gt;premier Participant&lt;/strong&gt; et la &lt;strong&gt;première Équipe&lt;/strong&gt;."></div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <select class="head-select" id="nb-participants">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                    <option value="7">7</option>
-                                                    <option value="8">8</option>
-                                                    <option value="9">9</option>
-                                                    <option value="10">10</option>
-                                                    <option value="11">11</option>
-                                                    <option value="12">12</option>
-                                                    <option value="13">13</option>
-                                                    <option value="14">14</option>
-                                                    <option value="15">15</option>
-                                                    <option value="16">16</option>
-                                                    <option value="17">17</option>
-                                                    <option value="18">18</option>
-                                                    <option value="19">19</option>
-                                                    <option value="20">20</option>
-                                                    <option value="21">21</option>
-                                                    <option value="22">22</option>
-                                                    <option value="23">23</option>
-                                                    <option value="24">24</option>
-                                                    <option value="25">25</option>
-                                                    <option value="26">26</option>
-                                                    <option value="27">27</option>
-                                                    <option value="28">28</option>
-                                                    <option value="29">29</option>
-                                                    <option value="30">30</option>
-                                                    <option value="31">31</option>
-                                                    <option value="32">32</option>
-                                                    <option value="33">33</option>
-                                                    <option value="34">34</option>
-                                                    <option value="35">35</option>
-                                                    <option value="36">36</option>
-                                                    <option value="37">37</option>
-                                                    <option value="38">38</option>
-                                                    <option value="39">39</option>
-                                                    <option value="40">40</option>
-                                                    <option value="41">41</option>
-                                                    <option value="42">42</option>
-                                                    <option value="43">43</option>
-                                                    <option value="44">44</option>
-                                                    <option value="45">45</option>
-                                                    <option value="46">46</option>
-                                                    <option value="47">47</option>
-                                                    <option value="48">48</option>
-                                                    <option value="49">49</option>
-                                                    <option value="50">50</option>
-                                                    <option value="51">51</option>
-                                                    <option value="52">52</option>
-                                                    <option value="53">53</option>
-                                                    <option value="54">54</option>
-                                                    <option value="55">55</option>
-                                                    <option value="56">56</option>
-                                                    <option value="57">57</option>
-                                                    <option value="58">58</option>
-                                                    <option value="59">59</option>
-                                                    <option value="60">60</option>
-                                                    <option value="61">61</option>
-                                                    <option value="62">62</option>
-                                                    <option value="63">63</option>
-                                                    <option value="64">64</option>
-                                                    <option value="65">65</option>
-                                                    <option value="66">66</option>
-                                                    <option value="67">67</option>
-                                                    <option value="68">68</option>
-                                                    <option value="69">69</option>
-                                                    <option value="70">70</option>
-                                                    <option value="71">71</option>
-                                                    <option value="72">72</option>
-                                                    <option value="73">73</option>
-                                                    <option value="74">74</option>
-                                                    <option value="75">75</option>
-                                                    <option value="76">76</option>
-                                                    <option value="77">77</option>
-                                                    <option value="78">78</option>
-                                                    <option value="79">79</option>
-                                                    <option value="80">80</option>
-                                                    <option value="81">81</option>
-                                                    <option value="82">82</option>
-                                                    <option value="83">83</option>
-                                                    <option value="84">84</option>
-                                                    <option value="85">85</option>
-                                                    <option value="86">86</option>
-                                                    <option value="87">87</option>
-                                                    <option value="88">88</option>
-                                                    <option value="89">89</option>
-                                                    <option value="90">90</option>
-                                                    <option value="91">91</option>
-                                                    <option value="92">92</option>
-                                                    <option value="93">93</option>
-                                                    <option value="94">94</option>
-                                                    <option value="95">95</option>
-                                                    <option value="96">96</option>
-                                                    <option value="97">97</option>
-                                                    <option value="98">98</option>
-                                                    <option value="99">99</option>
-                                                    <option value="100">100</option>
-                                            </select>
-                    <label for="nb-participants" class="head-label pr-15">Participants</label>
-                    <a class="import-icon toggle-it" data-target="#import-participant" data-toggle="tooltip" data-placement="bottom" title="Copier-coller des participants"><i class="fa fa-clipboard"></i></a>
-
-                </div>
-
-                <div id="import-participant" class="form-group">
-                    <label for="import-participant-list">Copier et coller une liste de participants. Un participant par ligne.</label>
-                    <textarea id="import-participant-list" class="form-control textarea-import" rows="10"></textarea>
-                    <a id="import-p-button" class="btn orange-btn middle-keamk-btn">Importer les participants</a>
-                </div>
-
-                <div id="mix_players" data-participant-trans="Participant" data-prototype="
+                            <div id="mix_players" data-participant-trans="Participant" data-prototype="
                 <div>
                     <div id=&quot;mix_players___name__&quot; class=&quot;participant-div participant-div-form row&quot;>
                         <div class=&quot;col-md-7&quot;>
@@ -244,303 +268,579 @@
                         </div>
                     </div>
                 </div>">
-                                    <div>
-                        <div id="mix_players__0" class="participant-div participant-div-form row">
-                            <div class="col-md-7">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-times delete-player"></i></span>
-                                    <input type="text" id="mix_players_0_name" name="mix[players][0][name]" class="form-control input-participants" placeholder="Participant 1" value="" />
+                                <div>
+                                    <div id="mix_players__0" class="participant-div participant-div-form row">
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i
+                                                        class="fa fa-times delete-player"></i></span>
+                                                <input type="text" id="mix_players_0_name" name="mix[players][0][name]"
+                                                    class="form-control input-participants" placeholder="Participant 1"
+                                                    value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 no-padding-left">
+                                            <div id="mix_players_0_gender" class="gender-participant">
+                                                <span class="gender-male"><input type="radio"
+                                                        id="mix_players_0_gender_0" name="mix[players][0][gender]"
+                                                        required="required" value="1" /><label
+                                                        for="mix_players_0_gender_0"
+                                                        class="required">M</label></span><span
+                                                    class="gender-female"><input type="radio"
+                                                        id="mix_players_0_gender_1" name="mix[players][0][gender]"
+                                                        required="required" value="2" /><label
+                                                        for="mix_players_0_gender_1" class="required">F</label></span>
+                                            </div>
+
+                                            <div id="mix_players_0_level" class="level-participant">
+                                                <label for="mix_players_0_level_1" class="required">1</label><input
+                                                    type="radio" id="mix_players_0_level_1"
+                                                    name="mix[players][0][level]" required="required" value="1" /><label
+                                                    for="mix_players_0_level_2" class="required">2</label><input
+                                                    type="radio" id="mix_players_0_level_2"
+                                                    name="mix[players][0][level]" required="required" value="2" /><label
+                                                    for="mix_players_0_level_3" class="required">3</label><input
+                                                    type="radio" id="mix_players_0_level_3"
+                                                    name="mix[players][0][level]" required="required" value="3" /><label
+                                                    for="mix_players_0_level_4" class="required">4</label><input
+                                                    type="radio" id="mix_players_0_level_4"
+                                                    name="mix[players][0][level]" required="required" value="4" /><label
+                                                    for="mix_players_0_level_5" class="required">5</label><input
+                                                    type="radio" id="mix_players_0_level_5"
+                                                    name="mix[players][0][level]" required="required" value="5" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="mix_players__1" class="participant-div participant-div-form row">
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i
+                                                        class="fa fa-times delete-player"></i></span>
+                                                <input type="text" id="mix_players_1_name" name="mix[players][1][name]"
+                                                    class="form-control input-participants" placeholder="Participant 2"
+                                                    value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 no-padding-left">
+                                            <div id="mix_players_1_gender" class="gender-participant">
+                                                <span class="gender-male"><input type="radio"
+                                                        id="mix_players_1_gender_0" name="mix[players][1][gender]"
+                                                        required="required" value="1" /><label
+                                                        for="mix_players_1_gender_0"
+                                                        class="required">M</label></span><span
+                                                    class="gender-female"><input type="radio"
+                                                        id="mix_players_1_gender_1" name="mix[players][1][gender]"
+                                                        required="required" value="2" /><label
+                                                        for="mix_players_1_gender_1" class="required">F</label></span>
+                                            </div>
+
+                                            <div id="mix_players_1_level" class="level-participant">
+                                                <label for="mix_players_1_level_1" class="required">1</label><input
+                                                    type="radio" id="mix_players_1_level_1"
+                                                    name="mix[players][1][level]" required="required" value="1" /><label
+                                                    for="mix_players_1_level_2" class="required">2</label><input
+                                                    type="radio" id="mix_players_1_level_2"
+                                                    name="mix[players][1][level]" required="required" value="2" /><label
+                                                    for="mix_players_1_level_3" class="required">3</label><input
+                                                    type="radio" id="mix_players_1_level_3"
+                                                    name="mix[players][1][level]" required="required" value="3" /><label
+                                                    for="mix_players_1_level_4" class="required">4</label><input
+                                                    type="radio" id="mix_players_1_level_4"
+                                                    name="mix[players][1][level]" required="required" value="4" /><label
+                                                    for="mix_players_1_level_5" class="required">5</label><input
+                                                    type="radio" id="mix_players_1_level_5"
+                                                    name="mix[players][1][level]" required="required" value="5" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="mix_players__2" class="participant-div participant-div-form row">
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i
+                                                        class="fa fa-times delete-player"></i></span>
+                                                <input type="text" id="mix_players_2_name" name="mix[players][2][name]"
+                                                    class="form-control input-participants" placeholder="Participant 3"
+                                                    value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 no-padding-left">
+                                            <div id="mix_players_2_gender" class="gender-participant">
+                                                <span class="gender-male"><input type="radio"
+                                                        id="mix_players_2_gender_0" name="mix[players][2][gender]"
+                                                        required="required" value="1" /><label
+                                                        for="mix_players_2_gender_0"
+                                                        class="required">M</label></span><span
+                                                    class="gender-female"><input type="radio"
+                                                        id="mix_players_2_gender_1" name="mix[players][2][gender]"
+                                                        required="required" value="2" /><label
+                                                        for="mix_players_2_gender_1" class="required">F</label></span>
+                                            </div>
+
+                                            <div id="mix_players_2_level" class="level-participant">
+                                                <label for="mix_players_2_level_1" class="required">1</label><input
+                                                    type="radio" id="mix_players_2_level_1"
+                                                    name="mix[players][2][level]" required="required" value="1" /><label
+                                                    for="mix_players_2_level_2" class="required">2</label><input
+                                                    type="radio" id="mix_players_2_level_2"
+                                                    name="mix[players][2][level]" required="required" value="2" /><label
+                                                    for="mix_players_2_level_3" class="required">3</label><input
+                                                    type="radio" id="mix_players_2_level_3"
+                                                    name="mix[players][2][level]" required="required" value="3" /><label
+                                                    for="mix_players_2_level_4" class="required">4</label><input
+                                                    type="radio" id="mix_players_2_level_4"
+                                                    name="mix[players][2][level]" required="required" value="4" /><label
+                                                    for="mix_players_2_level_5" class="required">5</label><input
+                                                    type="radio" id="mix_players_2_level_5"
+                                                    name="mix[players][2][level]" required="required" value="5" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="mix_players__3" class="participant-div participant-div-form row">
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i
+                                                        class="fa fa-times delete-player"></i></span>
+                                                <input type="text" id="mix_players_3_name" name="mix[players][3][name]"
+                                                    class="form-control input-participants" placeholder="Participant 4"
+                                                    value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 no-padding-left">
+                                            <div id="mix_players_3_gender" class="gender-participant">
+                                                <span class="gender-male"><input type="radio"
+                                                        id="mix_players_3_gender_0" name="mix[players][3][gender]"
+                                                        required="required" value="1" /><label
+                                                        for="mix_players_3_gender_0"
+                                                        class="required">M</label></span><span
+                                                    class="gender-female"><input type="radio"
+                                                        id="mix_players_3_gender_1" name="mix[players][3][gender]"
+                                                        required="required" value="2" /><label
+                                                        for="mix_players_3_gender_1" class="required">F</label></span>
+                                            </div>
+
+                                            <div id="mix_players_3_level" class="level-participant">
+                                                <label for="mix_players_3_level_1" class="required">1</label><input
+                                                    type="radio" id="mix_players_3_level_1"
+                                                    name="mix[players][3][level]" required="required" value="1" /><label
+                                                    for="mix_players_3_level_2" class="required">2</label><input
+                                                    type="radio" id="mix_players_3_level_2"
+                                                    name="mix[players][3][level]" required="required" value="2" /><label
+                                                    for="mix_players_3_level_3" class="required">3</label><input
+                                                    type="radio" id="mix_players_3_level_3"
+                                                    name="mix[players][3][level]" required="required" value="3" /><label
+                                                    for="mix_players_3_level_4" class="required">4</label><input
+                                                    type="radio" id="mix_players_3_level_4"
+                                                    name="mix[players][3][level]" required="required" value="4" /><label
+                                                    for="mix_players_3_level_5" class="required">5</label><input
+                                                    type="radio" id="mix_players_3_level_5"
+                                                    name="mix[players][3][level]" required="required" value="5" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="mix_players__4" class="participant-div participant-div-form row">
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i
+                                                        class="fa fa-times delete-player"></i></span>
+                                                <input type="text" id="mix_players_4_name" name="mix[players][4][name]"
+                                                    class="form-control input-participants" placeholder="Participant 5"
+                                                    value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 no-padding-left">
+                                            <div id="mix_players_4_gender" class="gender-participant">
+                                                <span class="gender-male"><input type="radio"
+                                                        id="mix_players_4_gender_0" name="mix[players][4][gender]"
+                                                        required="required" value="1" /><label
+                                                        for="mix_players_4_gender_0"
+                                                        class="required">M</label></span><span
+                                                    class="gender-female"><input type="radio"
+                                                        id="mix_players_4_gender_1" name="mix[players][4][gender]"
+                                                        required="required" value="2" /><label
+                                                        for="mix_players_4_gender_1" class="required">F</label></span>
+                                            </div>
+
+                                            <div id="mix_players_4_level" class="level-participant">
+                                                <label for="mix_players_4_level_1" class="required">1</label><input
+                                                    type="radio" id="mix_players_4_level_1"
+                                                    name="mix[players][4][level]" required="required" value="1" /><label
+                                                    for="mix_players_4_level_2" class="required">2</label><input
+                                                    type="radio" id="mix_players_4_level_2"
+                                                    name="mix[players][4][level]" required="required" value="2" /><label
+                                                    for="mix_players_4_level_3" class="required">3</label><input
+                                                    type="radio" id="mix_players_4_level_3"
+                                                    name="mix[players][4][level]" required="required" value="3" /><label
+                                                    for="mix_players_4_level_4" class="required">4</label><input
+                                                    type="radio" id="mix_players_4_level_4"
+                                                    name="mix[players][4][level]" required="required" value="4" /><label
+                                                    for="mix_players_4_level_5" class="required">5</label><input
+                                                    type="radio" id="mix_players_4_level_5"
+                                                    name="mix[players][4][level]" required="required" value="5" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="mix_players__5" class="participant-div participant-div-form row">
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i
+                                                        class="fa fa-times delete-player"></i></span>
+                                                <input type="text" id="mix_players_5_name" name="mix[players][5][name]"
+                                                    class="form-control input-participants" placeholder="Participant 6"
+                                                    value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 no-padding-left">
+                                            <div id="mix_players_5_gender" class="gender-participant">
+                                                <span class="gender-male"><input type="radio"
+                                                        id="mix_players_5_gender_0" name="mix[players][5][gender]"
+                                                        required="required" value="1" /><label
+                                                        for="mix_players_5_gender_0"
+                                                        class="required">M</label></span><span
+                                                    class="gender-female"><input type="radio"
+                                                        id="mix_players_5_gender_1" name="mix[players][5][gender]"
+                                                        required="required" value="2" /><label
+                                                        for="mix_players_5_gender_1" class="required">F</label></span>
+                                            </div>
+
+                                            <div id="mix_players_5_level" class="level-participant">
+                                                <label for="mix_players_5_level_1" class="required">1</label><input
+                                                    type="radio" id="mix_players_5_level_1"
+                                                    name="mix[players][5][level]" required="required" value="1" /><label
+                                                    for="mix_players_5_level_2" class="required">2</label><input
+                                                    type="radio" id="mix_players_5_level_2"
+                                                    name="mix[players][5][level]" required="required" value="2" /><label
+                                                    for="mix_players_5_level_3" class="required">3</label><input
+                                                    type="radio" id="mix_players_5_level_3"
+                                                    name="mix[players][5][level]" required="required" value="3" /><label
+                                                    for="mix_players_5_level_4" class="required">4</label><input
+                                                    type="radio" id="mix_players_5_level_4"
+                                                    name="mix[players][5][level]" required="required" value="4" /><label
+                                                    for="mix_players_5_level_5" class="required">5</label><input
+                                                    type="radio" id="mix_players_5_level_5"
+                                                    name="mix[players][5][level]" required="required" value="5" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="mix_players__6" class="participant-div participant-div-form row">
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i
+                                                        class="fa fa-times delete-player"></i></span>
+                                                <input type="text" id="mix_players_6_name" name="mix[players][6][name]"
+                                                    class="form-control input-participants" placeholder="Participant 7"
+                                                    value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 no-padding-left">
+                                            <div id="mix_players_6_gender" class="gender-participant">
+                                                <span class="gender-male"><input type="radio"
+                                                        id="mix_players_6_gender_0" name="mix[players][6][gender]"
+                                                        required="required" value="1" /><label
+                                                        for="mix_players_6_gender_0"
+                                                        class="required">M</label></span><span
+                                                    class="gender-female"><input type="radio"
+                                                        id="mix_players_6_gender_1" name="mix[players][6][gender]"
+                                                        required="required" value="2" /><label
+                                                        for="mix_players_6_gender_1" class="required">F</label></span>
+                                            </div>
+
+                                            <div id="mix_players_6_level" class="level-participant">
+                                                <label for="mix_players_6_level_1" class="required">1</label><input
+                                                    type="radio" id="mix_players_6_level_1"
+                                                    name="mix[players][6][level]" required="required" value="1" /><label
+                                                    for="mix_players_6_level_2" class="required">2</label><input
+                                                    type="radio" id="mix_players_6_level_2"
+                                                    name="mix[players][6][level]" required="required" value="2" /><label
+                                                    for="mix_players_6_level_3" class="required">3</label><input
+                                                    type="radio" id="mix_players_6_level_3"
+                                                    name="mix[players][6][level]" required="required" value="3" /><label
+                                                    for="mix_players_6_level_4" class="required">4</label><input
+                                                    type="radio" id="mix_players_6_level_4"
+                                                    name="mix[players][6][level]" required="required" value="4" /><label
+                                                    for="mix_players_6_level_5" class="required">5</label><input
+                                                    type="radio" id="mix_players_6_level_5"
+                                                    name="mix[players][6][level]" required="required" value="5" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="mix_players__7" class="participant-div participant-div-form row">
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i
+                                                        class="fa fa-times delete-player"></i></span>
+                                                <input type="text" id="mix_players_7_name" name="mix[players][7][name]"
+                                                    class="form-control input-participants" placeholder="Participant 8"
+                                                    value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 no-padding-left">
+                                            <div id="mix_players_7_gender" class="gender-participant">
+                                                <span class="gender-male"><input type="radio"
+                                                        id="mix_players_7_gender_0" name="mix[players][7][gender]"
+                                                        required="required" value="1" /><label
+                                                        for="mix_players_7_gender_0"
+                                                        class="required">M</label></span><span
+                                                    class="gender-female"><input type="radio"
+                                                        id="mix_players_7_gender_1" name="mix[players][7][gender]"
+                                                        required="required" value="2" /><label
+                                                        for="mix_players_7_gender_1" class="required">F</label></span>
+                                            </div>
+
+                                            <div id="mix_players_7_level" class="level-participant">
+                                                <label for="mix_players_7_level_1" class="required">1</label><input
+                                                    type="radio" id="mix_players_7_level_1"
+                                                    name="mix[players][7][level]" required="required" value="1" /><label
+                                                    for="mix_players_7_level_2" class="required">2</label><input
+                                                    type="radio" id="mix_players_7_level_2"
+                                                    name="mix[players][7][level]" required="required" value="2" /><label
+                                                    for="mix_players_7_level_3" class="required">3</label><input
+                                                    type="radio" id="mix_players_7_level_3"
+                                                    name="mix[players][7][level]" required="required" value="3" /><label
+                                                    for="mix_players_7_level_4" class="required">4</label><input
+                                                    type="radio" id="mix_players_7_level_4"
+                                                    name="mix[players][7][level]" required="required" value="4" /><label
+                                                    for="mix_players_7_level_5" class="required">5</label><input
+                                                    type="radio" id="mix_players_7_level_5"
+                                                    name="mix[players][7][level]" required="required" value="5" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="mix_players__8" class="participant-div participant-div-form row">
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i
+                                                        class="fa fa-times delete-player"></i></span>
+                                                <input type="text" id="mix_players_8_name" name="mix[players][8][name]"
+                                                    class="form-control input-participants" placeholder="Participant 9"
+                                                    value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 no-padding-left">
+                                            <div id="mix_players_8_gender" class="gender-participant">
+                                                <span class="gender-male"><input type="radio"
+                                                        id="mix_players_8_gender_0" name="mix[players][8][gender]"
+                                                        required="required" value="1" /><label
+                                                        for="mix_players_8_gender_0"
+                                                        class="required">M</label></span><span
+                                                    class="gender-female"><input type="radio"
+                                                        id="mix_players_8_gender_1" name="mix[players][8][gender]"
+                                                        required="required" value="2" /><label
+                                                        for="mix_players_8_gender_1" class="required">F</label></span>
+                                            </div>
+
+                                            <div id="mix_players_8_level" class="level-participant">
+                                                <label for="mix_players_8_level_1" class="required">1</label><input
+                                                    type="radio" id="mix_players_8_level_1"
+                                                    name="mix[players][8][level]" required="required" value="1" /><label
+                                                    for="mix_players_8_level_2" class="required">2</label><input
+                                                    type="radio" id="mix_players_8_level_2"
+                                                    name="mix[players][8][level]" required="required" value="2" /><label
+                                                    for="mix_players_8_level_3" class="required">3</label><input
+                                                    type="radio" id="mix_players_8_level_3"
+                                                    name="mix[players][8][level]" required="required" value="3" /><label
+                                                    for="mix_players_8_level_4" class="required">4</label><input
+                                                    type="radio" id="mix_players_8_level_4"
+                                                    name="mix[players][8][level]" required="required" value="4" /><label
+                                                    for="mix_players_8_level_5" class="required">5</label><input
+                                                    type="radio" id="mix_players_8_level_5"
+                                                    name="mix[players][8][level]" required="required" value="5" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="mix_players__9" class="participant-div participant-div-form row">
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i
+                                                        class="fa fa-times delete-player"></i></span>
+                                                <input type="text" id="mix_players_9_name" name="mix[players][9][name]"
+                                                    class="form-control input-participants" placeholder="Participant 10"
+                                                    value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 no-padding-left">
+                                            <div id="mix_players_9_gender" class="gender-participant">
+                                                <span class="gender-male"><input type="radio"
+                                                        id="mix_players_9_gender_0" name="mix[players][9][gender]"
+                                                        required="required" value="1" /><label
+                                                        for="mix_players_9_gender_0"
+                                                        class="required">M</label></span><span
+                                                    class="gender-female"><input type="radio"
+                                                        id="mix_players_9_gender_1" name="mix[players][9][gender]"
+                                                        required="required" value="2" /><label
+                                                        for="mix_players_9_gender_1" class="required">F</label></span>
+                                            </div>
+
+                                            <div id="mix_players_9_level" class="level-participant">
+                                                <label for="mix_players_9_level_1" class="required">1</label><input
+                                                    type="radio" id="mix_players_9_level_1"
+                                                    name="mix[players][9][level]" required="required" value="1" /><label
+                                                    for="mix_players_9_level_2" class="required">2</label><input
+                                                    type="radio" id="mix_players_9_level_2"
+                                                    name="mix[players][9][level]" required="required" value="2" /><label
+                                                    for="mix_players_9_level_3" class="required">3</label><input
+                                                    type="radio" id="mix_players_9_level_3"
+                                                    name="mix[players][9][level]" required="required" value="3" /><label
+                                                    for="mix_players_9_level_4" class="required">4</label><input
+                                                    type="radio" id="mix_players_9_level_4"
+                                                    name="mix[players][9][level]" required="required" value="4" /><label
+                                                    for="mix_players_9_level_5" class="required">5</label><input
+                                                    type="radio" id="mix_players_9_level_5"
+                                                    name="mix[players][9][level]" required="required" value="5" />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-5 no-padding-left">
-                                <div id="mix_players_0_gender" class="gender-participant">
-                                <span class="gender-male"><input type="radio" id="mix_players_0_gender_0" name="mix[players][0][gender]" required="required" value="1"  /><label for="mix_players_0_gender_0" class="required">M</label></span><span class="gender-female"><input type="radio" id="mix_players_0_gender_1" name="mix[players][0][gender]" required="required" value="2"  /><label for="mix_players_0_gender_1" class="required">F</label></span>                                </div>
 
-                                <div id="mix_players_0_level" class="level-participant">
-                                                                        <label for="mix_players_0_level_1" class="required">1</label><input type="radio" id="mix_players_0_level_1" name="mix[players][0][level]" required="required" value="1"  /><label for="mix_players_0_level_2" class="required">2</label><input type="radio" id="mix_players_0_level_2" name="mix[players][0][level]" required="required" value="2"  /><label for="mix_players_0_level_3" class="required">3</label><input type="radio" id="mix_players_0_level_3" name="mix[players][0][level]" required="required" value="3"  /><label for="mix_players_0_level_4" class="required">4</label><input type="radio" id="mix_players_0_level_4" name="mix[players][0][level]" required="required" value="4"  /><label for="mix_players_0_level_5" class="required">5</label><input type="radio" id="mix_players_0_level_5" name="mix[players][0][level]" required="required" value="5"  />                                </div>
+                            <div class="row">
+                                <div class="more-input col-md-7">
+                                    <span id="countPlayers" data-toggle="tooltip" data-placement="bottom"
+                                        title="Total Participants">10</span><a id="more-player"
+                                        class="btn grey-btn small-keamk-btn">Ajouter un participant</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                                    <div>
-                        <div id="mix_players__1" class="participant-div participant-div-form row">
-                            <div class="col-md-7">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-times delete-player"></i></span>
-                                    <input type="text" id="mix_players_1_name" name="mix[players][1][name]" class="form-control input-participants" placeholder="Participant 2" value="" />
-                                </div>
-                            </div>
-                            <div class="col-md-5 no-padding-left">
-                                <div id="mix_players_1_gender" class="gender-participant">
-                                <span class="gender-male"><input type="radio" id="mix_players_1_gender_0" name="mix[players][1][gender]" required="required" value="1"  /><label for="mix_players_1_gender_0" class="required">M</label></span><span class="gender-female"><input type="radio" id="mix_players_1_gender_1" name="mix[players][1][gender]" required="required" value="2"  /><label for="mix_players_1_gender_1" class="required">F</label></span>                                </div>
 
-                                <div id="mix_players_1_level" class="level-participant">
-                                                                        <label for="mix_players_1_level_1" class="required">1</label><input type="radio" id="mix_players_1_level_1" name="mix[players][1][level]" required="required" value="1"  /><label for="mix_players_1_level_2" class="required">2</label><input type="radio" id="mix_players_1_level_2" name="mix[players][1][level]" required="required" value="2"  /><label for="mix_players_1_level_3" class="required">3</label><input type="radio" id="mix_players_1_level_3" name="mix[players][1][level]" required="required" value="3"  /><label for="mix_players_1_level_4" class="required">4</label><input type="radio" id="mix_players_1_level_4" name="mix[players][1][level]" required="required" value="4"  /><label for="mix_players_1_level_5" class="required">5</label><input type="radio" id="mix_players_1_level_5" name="mix[players][1][level]" required="required" value="5"  />                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                    <div>
-                        <div id="mix_players__2" class="participant-div participant-div-form row">
-                            <div class="col-md-7">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-times delete-player"></i></span>
-                                    <input type="text" id="mix_players_2_name" name="mix[players][2][name]" class="form-control input-participants" placeholder="Participant 3" value="" />
-                                </div>
-                            </div>
-                            <div class="col-md-5 no-padding-left">
-                                <div id="mix_players_2_gender" class="gender-participant">
-                                <span class="gender-male"><input type="radio" id="mix_players_2_gender_0" name="mix[players][2][gender]" required="required" value="1"  /><label for="mix_players_2_gender_0" class="required">M</label></span><span class="gender-female"><input type="radio" id="mix_players_2_gender_1" name="mix[players][2][gender]" required="required" value="2"  /><label for="mix_players_2_gender_1" class="required">F</label></span>                                </div>
+                        <div class="col-md-6 teams-block">
 
-                                <div id="mix_players_2_level" class="level-participant">
-                                                                        <label for="mix_players_2_level_1" class="required">1</label><input type="radio" id="mix_players_2_level_1" name="mix[players][2][level]" required="required" value="1"  /><label for="mix_players_2_level_2" class="required">2</label><input type="radio" id="mix_players_2_level_2" name="mix[players][2][level]" required="required" value="2"  /><label for="mix_players_2_level_3" class="required">3</label><input type="radio" id="mix_players_2_level_3" name="mix[players][2][level]" required="required" value="3"  /><label for="mix_players_2_level_4" class="required">4</label><input type="radio" id="mix_players_2_level_4" name="mix[players][2][level]" required="required" value="4"  /><label for="mix_players_2_level_5" class="required">5</label><input type="radio" id="mix_players_2_level_5" name="mix[players][2][level]" required="required" value="5"  />                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                    <div>
-                        <div id="mix_players__3" class="participant-div participant-div-form row">
-                            <div class="col-md-7">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-times delete-player"></i></span>
-                                    <input type="text" id="mix_players_3_name" name="mix[players][3][name]" class="form-control input-participants" placeholder="Participant 4" value="" />
-                                </div>
-                            </div>
-                            <div class="col-md-5 no-padding-left">
-                                <div id="mix_players_3_gender" class="gender-participant">
-                                <span class="gender-male"><input type="radio" id="mix_players_3_gender_0" name="mix[players][3][gender]" required="required" value="1"  /><label for="mix_players_3_gender_0" class="required">M</label></span><span class="gender-female"><input type="radio" id="mix_players_3_gender_1" name="mix[players][3][gender]" required="required" value="2"  /><label for="mix_players_3_gender_1" class="required">F</label></span>                                </div>
+                            <div class="form-group">
+                                <select id="nb-teams" class="head-select">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                    <option value="60">60</option>
+                                    <option value="61">61</option>
+                                    <option value="62">62</option>
+                                    <option value="63">63</option>
+                                    <option value="64">64</option>
+                                    <option value="65">65</option>
+                                    <option value="66">66</option>
+                                    <option value="67">67</option>
+                                    <option value="68">68</option>
+                                    <option value="69">69</option>
+                                    <option value="70">70</option>
+                                    <option value="71">71</option>
+                                    <option value="72">72</option>
+                                    <option value="73">73</option>
+                                    <option value="74">74</option>
+                                    <option value="75">75</option>
+                                    <option value="76">76</option>
+                                    <option value="77">77</option>
+                                    <option value="78">78</option>
+                                    <option value="79">79</option>
+                                    <option value="80">80</option>
+                                    <option value="81">81</option>
+                                    <option value="82">82</option>
+                                    <option value="83">83</option>
+                                    <option value="84">84</option>
+                                    <option value="85">85</option>
+                                    <option value="86">86</option>
+                                    <option value="87">87</option>
+                                    <option value="88">88</option>
+                                    <option value="89">89</option>
+                                    <option value="90">90</option>
+                                    <option value="91">91</option>
+                                    <option value="92">92</option>
+                                    <option value="93">93</option>
+                                    <option value="94">94</option>
+                                    <option value="95">95</option>
+                                    <option value="96">96</option>
+                                    <option value="97">97</option>
+                                    <option value="98">98</option>
+                                    <option value="99">99</option>
+                                    <option value="100">100</option>
 
-                                <div id="mix_players_3_level" class="level-participant">
-                                                                        <label for="mix_players_3_level_1" class="required">1</label><input type="radio" id="mix_players_3_level_1" name="mix[players][3][level]" required="required" value="1"  /><label for="mix_players_3_level_2" class="required">2</label><input type="radio" id="mix_players_3_level_2" name="mix[players][3][level]" required="required" value="2"  /><label for="mix_players_3_level_3" class="required">3</label><input type="radio" id="mix_players_3_level_3" name="mix[players][3][level]" required="required" value="3"  /><label for="mix_players_3_level_4" class="required">4</label><input type="radio" id="mix_players_3_level_4" name="mix[players][3][level]" required="required" value="4"  /><label for="mix_players_3_level_5" class="required">5</label><input type="radio" id="mix_players_3_level_5" name="mix[players][3][level]" required="required" value="5"  />                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                    <div>
-                        <div id="mix_players__4" class="participant-div participant-div-form row">
-                            <div class="col-md-7">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-times delete-player"></i></span>
-                                    <input type="text" id="mix_players_4_name" name="mix[players][4][name]" class="form-control input-participants" placeholder="Participant 5" value="" />
-                                </div>
-                            </div>
-                            <div class="col-md-5 no-padding-left">
-                                <div id="mix_players_4_gender" class="gender-participant">
-                                <span class="gender-male"><input type="radio" id="mix_players_4_gender_0" name="mix[players][4][gender]" required="required" value="1"  /><label for="mix_players_4_gender_0" class="required">M</label></span><span class="gender-female"><input type="radio" id="mix_players_4_gender_1" name="mix[players][4][gender]" required="required" value="2"  /><label for="mix_players_4_gender_1" class="required">F</label></span>                                </div>
+                                </select>
+                                <label for="nb-teams" class="head-label pr-15">Équipes</label>
+                                <a class="import-icon toggle-it" data-target="#import-team" data-toggle="tooltip"
+                                    data-placement="bottom" title="Copier-coller des équipes"><i
+                                        class="fa fa-clipboard"></i></a>
 
-                                <div id="mix_players_4_level" class="level-participant">
-                                                                        <label for="mix_players_4_level_1" class="required">1</label><input type="radio" id="mix_players_4_level_1" name="mix[players][4][level]" required="required" value="1"  /><label for="mix_players_4_level_2" class="required">2</label><input type="radio" id="mix_players_4_level_2" name="mix[players][4][level]" required="required" value="2"  /><label for="mix_players_4_level_3" class="required">3</label><input type="radio" id="mix_players_4_level_3" name="mix[players][4][level]" required="required" value="3"  /><label for="mix_players_4_level_4" class="required">4</label><input type="radio" id="mix_players_4_level_4" name="mix[players][4][level]" required="required" value="4"  /><label for="mix_players_4_level_5" class="required">5</label><input type="radio" id="mix_players_4_level_5" name="mix[players][4][level]" required="required" value="5"  />                                </div>
                             </div>
-                        </div>
-                    </div>
-                                    <div>
-                        <div id="mix_players__5" class="participant-div participant-div-form row">
-                            <div class="col-md-7">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-times delete-player"></i></span>
-                                    <input type="text" id="mix_players_5_name" name="mix[players][5][name]" class="form-control input-participants" placeholder="Participant 6" value="" />
-                                </div>
+
+                            <div id="import-team" class="form-group">
+                                <label for="import-team-list">Copier et coller une liste d&#039;équipes. Une équipe par
+                                    ligne.</label>
+                                <textarea id="import-team-list" class="form-control textarea-import"
+                                    rows="10"></textarea>
+                                <a id="import-t-button" class="btn orange-btn middle-keamk-btn">Importer les équipes</a>
                             </div>
-                            <div class="col-md-5 no-padding-left">
-                                <div id="mix_players_5_gender" class="gender-participant">
-                                <span class="gender-male"><input type="radio" id="mix_players_5_gender_0" name="mix[players][5][gender]" required="required" value="1"  /><label for="mix_players_5_gender_0" class="required">M</label></span><span class="gender-female"><input type="radio" id="mix_players_5_gender_1" name="mix[players][5][gender]" required="required" value="2"  /><label for="mix_players_5_gender_1" class="required">F</label></span>                                </div>
 
-                                <div id="mix_players_5_level" class="level-participant">
-                                                                        <label for="mix_players_5_level_1" class="required">1</label><input type="radio" id="mix_players_5_level_1" name="mix[players][5][level]" required="required" value="1"  /><label for="mix_players_5_level_2" class="required">2</label><input type="radio" id="mix_players_5_level_2" name="mix[players][5][level]" required="required" value="2"  /><label for="mix_players_5_level_3" class="required">3</label><input type="radio" id="mix_players_5_level_3" name="mix[players][5][level]" required="required" value="3"  /><label for="mix_players_5_level_4" class="required">4</label><input type="radio" id="mix_players_5_level_4" name="mix[players][5][level]" required="required" value="4"  /><label for="mix_players_5_level_5" class="required">5</label><input type="radio" id="mix_players_5_level_5" name="mix[players][5][level]" required="required" value="5"  />                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                    <div>
-                        <div id="mix_players__6" class="participant-div participant-div-form row">
-                            <div class="col-md-7">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-times delete-player"></i></span>
-                                    <input type="text" id="mix_players_6_name" name="mix[players][6][name]" class="form-control input-participants" placeholder="Participant 7" value="" />
-                                </div>
-                            </div>
-                            <div class="col-md-5 no-padding-left">
-                                <div id="mix_players_6_gender" class="gender-participant">
-                                <span class="gender-male"><input type="radio" id="mix_players_6_gender_0" name="mix[players][6][gender]" required="required" value="1"  /><label for="mix_players_6_gender_0" class="required">M</label></span><span class="gender-female"><input type="radio" id="mix_players_6_gender_1" name="mix[players][6][gender]" required="required" value="2"  /><label for="mix_players_6_gender_1" class="required">F</label></span>                                </div>
-
-                                <div id="mix_players_6_level" class="level-participant">
-                                                                        <label for="mix_players_6_level_1" class="required">1</label><input type="radio" id="mix_players_6_level_1" name="mix[players][6][level]" required="required" value="1"  /><label for="mix_players_6_level_2" class="required">2</label><input type="radio" id="mix_players_6_level_2" name="mix[players][6][level]" required="required" value="2"  /><label for="mix_players_6_level_3" class="required">3</label><input type="radio" id="mix_players_6_level_3" name="mix[players][6][level]" required="required" value="3"  /><label for="mix_players_6_level_4" class="required">4</label><input type="radio" id="mix_players_6_level_4" name="mix[players][6][level]" required="required" value="4"  /><label for="mix_players_6_level_5" class="required">5</label><input type="radio" id="mix_players_6_level_5" name="mix[players][6][level]" required="required" value="5"  />                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                    <div>
-                        <div id="mix_players__7" class="participant-div participant-div-form row">
-                            <div class="col-md-7">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-times delete-player"></i></span>
-                                    <input type="text" id="mix_players_7_name" name="mix[players][7][name]" class="form-control input-participants" placeholder="Participant 8" value="" />
-                                </div>
-                            </div>
-                            <div class="col-md-5 no-padding-left">
-                                <div id="mix_players_7_gender" class="gender-participant">
-                                <span class="gender-male"><input type="radio" id="mix_players_7_gender_0" name="mix[players][7][gender]" required="required" value="1"  /><label for="mix_players_7_gender_0" class="required">M</label></span><span class="gender-female"><input type="radio" id="mix_players_7_gender_1" name="mix[players][7][gender]" required="required" value="2"  /><label for="mix_players_7_gender_1" class="required">F</label></span>                                </div>
-
-                                <div id="mix_players_7_level" class="level-participant">
-                                                                        <label for="mix_players_7_level_1" class="required">1</label><input type="radio" id="mix_players_7_level_1" name="mix[players][7][level]" required="required" value="1"  /><label for="mix_players_7_level_2" class="required">2</label><input type="radio" id="mix_players_7_level_2" name="mix[players][7][level]" required="required" value="2"  /><label for="mix_players_7_level_3" class="required">3</label><input type="radio" id="mix_players_7_level_3" name="mix[players][7][level]" required="required" value="3"  /><label for="mix_players_7_level_4" class="required">4</label><input type="radio" id="mix_players_7_level_4" name="mix[players][7][level]" required="required" value="4"  /><label for="mix_players_7_level_5" class="required">5</label><input type="radio" id="mix_players_7_level_5" name="mix[players][7][level]" required="required" value="5"  />                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                    <div>
-                        <div id="mix_players__8" class="participant-div participant-div-form row">
-                            <div class="col-md-7">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-times delete-player"></i></span>
-                                    <input type="text" id="mix_players_8_name" name="mix[players][8][name]" class="form-control input-participants" placeholder="Participant 9" value="" />
-                                </div>
-                            </div>
-                            <div class="col-md-5 no-padding-left">
-                                <div id="mix_players_8_gender" class="gender-participant">
-                                <span class="gender-male"><input type="radio" id="mix_players_8_gender_0" name="mix[players][8][gender]" required="required" value="1"  /><label for="mix_players_8_gender_0" class="required">M</label></span><span class="gender-female"><input type="radio" id="mix_players_8_gender_1" name="mix[players][8][gender]" required="required" value="2"  /><label for="mix_players_8_gender_1" class="required">F</label></span>                                </div>
-
-                                <div id="mix_players_8_level" class="level-participant">
-                                                                        <label for="mix_players_8_level_1" class="required">1</label><input type="radio" id="mix_players_8_level_1" name="mix[players][8][level]" required="required" value="1"  /><label for="mix_players_8_level_2" class="required">2</label><input type="radio" id="mix_players_8_level_2" name="mix[players][8][level]" required="required" value="2"  /><label for="mix_players_8_level_3" class="required">3</label><input type="radio" id="mix_players_8_level_3" name="mix[players][8][level]" required="required" value="3"  /><label for="mix_players_8_level_4" class="required">4</label><input type="radio" id="mix_players_8_level_4" name="mix[players][8][level]" required="required" value="4"  /><label for="mix_players_8_level_5" class="required">5</label><input type="radio" id="mix_players_8_level_5" name="mix[players][8][level]" required="required" value="5"  />                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                    <div>
-                        <div id="mix_players__9" class="participant-div participant-div-form row">
-                            <div class="col-md-7">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-times delete-player"></i></span>
-                                    <input type="text" id="mix_players_9_name" name="mix[players][9][name]" class="form-control input-participants" placeholder="Participant 10" value="" />
-                                </div>
-                            </div>
-                            <div class="col-md-5 no-padding-left">
-                                <div id="mix_players_9_gender" class="gender-participant">
-                                <span class="gender-male"><input type="radio" id="mix_players_9_gender_0" name="mix[players][9][gender]" required="required" value="1"  /><label for="mix_players_9_gender_0" class="required">M</label></span><span class="gender-female"><input type="radio" id="mix_players_9_gender_1" name="mix[players][9][gender]" required="required" value="2"  /><label for="mix_players_9_gender_1" class="required">F</label></span>                                </div>
-
-                                <div id="mix_players_9_level" class="level-participant">
-                                                                        <label for="mix_players_9_level_1" class="required">1</label><input type="radio" id="mix_players_9_level_1" name="mix[players][9][level]" required="required" value="1"  /><label for="mix_players_9_level_2" class="required">2</label><input type="radio" id="mix_players_9_level_2" name="mix[players][9][level]" required="required" value="2"  /><label for="mix_players_9_level_3" class="required">3</label><input type="radio" id="mix_players_9_level_3" name="mix[players][9][level]" required="required" value="3"  /><label for="mix_players_9_level_4" class="required">4</label><input type="radio" id="mix_players_9_level_4" name="mix[players][9][level]" required="required" value="4"  /><label for="mix_players_9_level_5" class="required">5</label><input type="radio" id="mix_players_9_level_5" name="mix[players][9][level]" required="required" value="5"  />                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                </div>
-
-                <div class="row">
-                    <div class="more-input col-md-7">
-                        <span id="countPlayers" data-toggle="tooltip" data-placement="bottom" title="Total Participants">10</span><a id="more-player" class="btn grey-btn small-keamk-btn">Ajouter un participant</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 teams-block">
-
-                <div class="form-group">
-                    <select id="nb-teams" class="head-select">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                    <option value="7">7</option>
-                                                    <option value="8">8</option>
-                                                    <option value="9">9</option>
-                                                    <option value="10">10</option>
-                                                    <option value="11">11</option>
-                                                    <option value="12">12</option>
-                                                    <option value="13">13</option>
-                                                    <option value="14">14</option>
-                                                    <option value="15">15</option>
-                                                    <option value="16">16</option>
-                                                    <option value="17">17</option>
-                                                    <option value="18">18</option>
-                                                    <option value="19">19</option>
-                                                    <option value="20">20</option>
-                                                    <option value="21">21</option>
-                                                    <option value="22">22</option>
-                                                    <option value="23">23</option>
-                                                    <option value="24">24</option>
-                                                    <option value="25">25</option>
-                                                    <option value="26">26</option>
-                                                    <option value="27">27</option>
-                                                    <option value="28">28</option>
-                                                    <option value="29">29</option>
-                                                    <option value="30">30</option>
-                                                    <option value="31">31</option>
-                                                    <option value="32">32</option>
-                                                    <option value="33">33</option>
-                                                    <option value="34">34</option>
-                                                    <option value="35">35</option>
-                                                    <option value="36">36</option>
-                                                    <option value="37">37</option>
-                                                    <option value="38">38</option>
-                                                    <option value="39">39</option>
-                                                    <option value="40">40</option>
-                                                    <option value="41">41</option>
-                                                    <option value="42">42</option>
-                                                    <option value="43">43</option>
-                                                    <option value="44">44</option>
-                                                    <option value="45">45</option>
-                                                    <option value="46">46</option>
-                                                    <option value="47">47</option>
-                                                    <option value="48">48</option>
-                                                    <option value="49">49</option>
-                                                    <option value="50">50</option>
-                                                    <option value="51">51</option>
-                                                    <option value="52">52</option>
-                                                    <option value="53">53</option>
-                                                    <option value="54">54</option>
-                                                    <option value="55">55</option>
-                                                    <option value="56">56</option>
-                                                    <option value="57">57</option>
-                                                    <option value="58">58</option>
-                                                    <option value="59">59</option>
-                                                    <option value="60">60</option>
-                                                    <option value="61">61</option>
-                                                    <option value="62">62</option>
-                                                    <option value="63">63</option>
-                                                    <option value="64">64</option>
-                                                    <option value="65">65</option>
-                                                    <option value="66">66</option>
-                                                    <option value="67">67</option>
-                                                    <option value="68">68</option>
-                                                    <option value="69">69</option>
-                                                    <option value="70">70</option>
-                                                    <option value="71">71</option>
-                                                    <option value="72">72</option>
-                                                    <option value="73">73</option>
-                                                    <option value="74">74</option>
-                                                    <option value="75">75</option>
-                                                    <option value="76">76</option>
-                                                    <option value="77">77</option>
-                                                    <option value="78">78</option>
-                                                    <option value="79">79</option>
-                                                    <option value="80">80</option>
-                                                    <option value="81">81</option>
-                                                    <option value="82">82</option>
-                                                    <option value="83">83</option>
-                                                    <option value="84">84</option>
-                                                    <option value="85">85</option>
-                                                    <option value="86">86</option>
-                                                    <option value="87">87</option>
-                                                    <option value="88">88</option>
-                                                    <option value="89">89</option>
-                                                    <option value="90">90</option>
-                                                    <option value="91">91</option>
-                                                    <option value="92">92</option>
-                                                    <option value="93">93</option>
-                                                    <option value="94">94</option>
-                                                    <option value="95">95</option>
-                                                    <option value="96">96</option>
-                                                    <option value="97">97</option>
-                                                    <option value="98">98</option>
-                                                    <option value="99">99</option>
-                                                    <option value="100">100</option>
-
-                                            </select>
-                    <label for="nb-teams" class="head-label pr-15">Équipes</label>
-                    <a class="import-icon toggle-it" data-target="#import-team" data-toggle="tooltip" data-placement="bottom" title="Copier-coller des équipes"><i class="fa fa-clipboard"></i></a>
-
-                </div>
-
-                <div id="import-team" class="form-group">
-                    <label for="import-team-list">Copier et coller une liste d&#039;équipes. Une équipe par ligne.</label>
-                    <textarea id="import-team-list" class="form-control textarea-import" rows="10"></textarea>
-                    <a id="import-t-button" class="btn orange-btn middle-keamk-btn">Importer les équipes</a>
-                </div>
-
-                <div id="mix_teams" data-team-trans="Équipe" data-prototype="
+                            <div id="mix_teams" data-team-trans="Équipe" data-prototype="
                      <div>
                         <div id=&quot;mix_teams___name__&quot; class=&quot;team-div row&quot;>
                         <div class=&quot;col-md-7&quot;>
@@ -552,76 +852,82 @@
                         </div>
                      </div>
                      ">
-                                        <div>
-                        <div id="mix_teams_0" class="team-div row">
-                        <div class="col-md-7">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-times delete-team"></i></span>
-                                <input type="text" id="mix_teams_0_name" name="mix[teams][0][name]" class="form-control input-teams" placeholder="Équipe 1" value="">
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                                        <div>
-                        <div id="mix_teams_1" class="team-div row">
-                        <div class="col-md-7">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-times delete-team"></i></span>
-                                <input type="text" id="mix_teams_1_name" name="mix[teams][1][name]" class="form-control input-teams" placeholder="Équipe 2" value="">
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                <div>
-                                        
+                                <div>
+                                    <div id="mix_teams_0" class="team-div row">
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i
+                                                        class="fa fa-times delete-team"></i></span>
+                                                <input type="text" id="mix_teams_0_name" name="mix[teams][0][name]"
+                                                    class="form-control input-teams" placeholder="Équipe 1" value="">
+                                            </div>
                                         </div>
-                                        <div>
-                                        
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="mix_teams_1" class="team-div row">
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i
+                                                        class="fa fa-times delete-team"></i></span>
+                                                <input type="text" id="mix_teams_1_name" name="mix[teams][1][name]"
+                                                    class="form-control input-teams" placeholder="Équipe 2" value="">
+                                            </div>
                                         </div>
-                                        
-                                        </div>
+                                    </div>
+                                </div>
+                                <div>
 
-                <div class="row">
-                    <div class="more-input col-md-7">
-                        <span id="countTeams" data-toggle="tooltip" data-placement="bottom" title="Total Équipes">5</span><a id="more-team" class="btn grey-btn small-keamk-btn">Ajouter une équipe</a>
+                                </div>
+                                <div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="more-input col-md-7">
+                                    <span id="countTeams" data-toggle="tooltip" data-placement="bottom"
+                                        title="Total Équipes">5</span><a id="more-team"
+                                        class="btn grey-btn small-keamk-btn">Ajouter une équipe</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <input id="mix__token" name="mix[_token]" value="r9rFB6tUU38nCZJT0Jhy0cieFPgzs53d4OLiBU7F8DA"
+                        type="hidden">
+
+                    <div class="form-group btn-in-row padding-bloc-double">
+                        <button type="submit" id="mix_save" name="mix[save]"
+                            class="btn orange-btn large-keamk-btn">Générer les équipes</button>
                     </div>
                 </div>
 
             </div>
-        </div>
-
-        <input id="mix__token" name="mix[_token]" value="r9rFB6tUU38nCZJT0Jhy0cieFPgzs53d4OLiBU7F8DA" type="hidden">
-
-        <div class="form-group btn-in-row padding-bloc-double">
-            <button type="submit" id="mix_save" name="mix[save]" class="btn orange-btn large-keamk-btn">Générer les équipes</button>
-        </div>
+        </form>
     </div>
 
-</div>
-</form>
-
-
-</div>
-
-<footer>
-    <div class="footer-second padding-bloc">
-        <div class="container text-center k-font-14">
-            <p>&copy; 2023 Bonballon</p>
-            <p>Réalisé par <a class="link-ext" href="https://xrweb06.netlify.app">XR Web</a></p>
+    <footer>
+        <div class="footer-second padding-bloc">
+            <div class="container text-center k-font-14">
+                <p>&copy; 2023 Bonballon</p>
+                <p>Réalisé par <a class="link-ext" href="https://xrweb06.netlify.app">XR Web</a></p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- Button to scroll to top -->
-<div class="scroll-to-top">
-    <i class="fa fa-angle-up"></i>
-</div>
+    <!-- Button to scroll to top -->
+    <div class="scroll-to-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
 
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery/1.11.3/jquery.min.js"></script>
     <script src="bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="js/routing.json"></script>
-    <script src="js/main.js"></script>   
+    <script src="js/main.js"></script>
+    <script src="js/pwa.js"></script>
 
 </body>
 

@@ -8,7 +8,8 @@ body {
 
 p {
     margin: 0;
-    line-height: 1.66em
+    line-height: 1.66em;
+    color: #f8f9fa;
 }
 
 a {

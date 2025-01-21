@@ -388,27 +388,106 @@
                 })
             };
             validForm = function () {
-                t('#mix_form').on('submit', function () {
-                    t('.error-form').remove();
-                    var e = t(this).find('input[name="mix[title]"]'),
-                        i = t('.input-participants').first(),
-                        a = t('.input-teams').first();
-                    if (t.trim(e.val()).length == 0) {
-                        displayError('#div_mix_title');
-                        return !1
-                    };
-                    if (t.trim(i.val()).length == 0 || t.trim(a.val()).length == 0) {
-                        displayError('#mix_form_error');
-                        return !1
+                t('#mix_form').submit(function (e) {
+                    e.preventDefault();
+                    
+                    // Récupérer le titre
+                    var title = t('#mix_title').val().trim();
+                    if (!title) {
+                        alert('Veuillez entrer un titre pour le tirage');
+                        return;
                     }
+
+                    // Récupérer les participants
+                    var participants = [];
+                    t('.input-participants').each(function() {
+                        var value = t(this).val().trim();
+                        if (value) {
+                            // Récupérer le niveau sélectionné
+                            var playerDiv = t(this).closest('.participant-div');
+                            var level = playerDiv.find('input[name$="[level]"]:checked').val();
+                            participants.push({
+                                name: value,
+                                level: parseInt(level || "1") // Utiliser 1 comme niveau par défaut
+                            });
+                        }
+                    });
+
+                    // Récupérer le nombre d'équipes
+                    var numTeams = parseInt(t('#nb-teams').val());
+
+                    if (participants.length < numTeams) {
+                        alert('Il doit y avoir au moins autant de participants que d\'équipes');
+                        return;
+                    }
+
+                    // Vérifier si le mode niveau est activé
+                    var isLevelMode = t('input[name="mix[typeMix]"]:checked').val() === '2';
+
+                    // Générer les équipes aléatoires
+                    var teams = generateRandomTeams(participants, numTeams);
+
+                    // Sauvegarder les résultats dans localStorage
+                    var drawResults = {
+                        title: title,
+                        teams: teams,
+                        isLevelMode: isLevelMode
+                    };
+                    localStorage.setItem('drawResults', JSON.stringify(drawResults));
+
+                    // Rediriger vers la page de résultats
+                    window.location.href = 'results.html';
                 });
-                displayError = function (e) {
-                    var i = t(e).attr('data-error');
-                    t(e).append('<div class="alert alert-danger error-form" role="alert"><p>' + i + '</p></div>');
-                    t('html, body').animate({
-                        scrollTop: t(e).offset().top
-                    }, 200)
+            };
+
+            generateRandomTeams = function(participants, numTeams) {
+                // Mélanger les participants
+                for (let i = participants.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [participants[i], participants[j]] = [participants[j], participants[i]];
                 }
+
+                // Créer les équipes
+                var teams = Array.from({ length: numTeams }, () => []);
+                var currentTeam = 0;
+
+                // Si le mode niveau est activé
+                if (t('input[name="mix[typeMix]"]:checked').val() === '2') {
+                    // Trier par niveau
+                    participants.sort((a, b) => b.level - a.level);
+                }
+
+                // Distribuer les joueurs
+                participants.forEach(participant => {
+                    teams[currentTeam].push(participant);
+                    currentTeam = (currentTeam + 1) % numTeams;
+                });
+
+                return teams;
+            };
+
+            displayTeams = function(teams) {
+                var resultsHtml = '<div class="results-container">';
+                teams.forEach((team, index) => {
+                    resultsHtml += '<div class="team-result">';
+                    resultsHtml += '<h3>Équipe ' + (index + 1) + '</h3>';
+                    resultsHtml += '<ul>';
+                    team.forEach(player => {
+                        resultsHtml += '<li>' + player.name;
+                        if (t('input[name="mix[typeMix]"]:checked').val() === '2') {
+                            resultsHtml += ' (Niveau: ' + player.level + ')';
+                        }
+                        resultsHtml += '</li>';
+                    });
+                    resultsHtml += '</ul></div>';
+                });
+                resultsHtml += '</div>';
+
+                // Créer ou mettre à jour la div des résultats
+                if (t('#teams-results').length === 0) {
+                    t('.main-container').append('<div id="teams-results"></div>');
+                }
+                t('#teams-results').html(resultsHtml);
             };
             copyToClipboard = function () {
                 t('.copytoclip').click(function () {
