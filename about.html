@@ -5,12 +5,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="description" content="Bonballon, le générateur d&#039;équipes aléatoires.">
-    <title>Générateur d&#039;équipes aléatoires - Bonballon</title>
+    <meta name="theme-color" content="#23468C">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Bonballon">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" sizes="128x128" href="images/favicon.png">
-
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,6 +22,8 @@
         type='text/css'>
 
     <link type="text/css" rel="stylesheet" href="css/style.css" media="all" />
+
+    <title>Générateur d&#039;équipes aléatoires - Bonballon</title>
 
 </head>
 
@@ -29,7 +34,7 @@
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
-                        aria-expanded="false" aria-controls="navbar">
+                    aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -39,24 +44,25 @@
             </div>
             <nav id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about.html">A propos</a></li>
-                    <li><a href="features.html">Fonctionnalités</a></li>
+                    <li><a href="index.html"><i class="fa fa-home"></i> Accueil</a></li>
+                    <li><a href="about.html"><i class="fa fa-info-circle"></i> A propos</a></li>
+                    <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <div class="main-container">
-
-
+        <div id="about-title" class="bg-dark-grey">
+            <div class="container padding-bloc">
+                <h2 id="about-title" class="text-center text-white">A propos</h2>
+            </div>
+        </div>
 
         <div class="homepage">
             <div class="bg-white">
                 <div class="container text-center padding-bloc home-pres">
-                    <h1>
-                        Créer des équipes et des groupes aléatoires
-                    </h1>
+                    <h2>Créer des équipes aléatoires</h2>
                     <p>
                         Bonballon est un générateur d&#039;équipes aléatoires utilisant différents critères tels que le
                         niveau des participants.
@@ -71,10 +77,11 @@
 
             <div class="bg-grey">
                 <div class="container padding-bloc-double home-domains">
-                    <h1 class="text-center">
+                    <h2 class="text-center">
                         Comment ça marche ?
-                    </h1>
-                    <p class="text-center">Simple et facile à utiliser. Vous pouvez profitez de Bonballon sans inscription.</p>
+                    </h2>
+                    <p class="text-center">Simple et facile à utiliser. Vous pouvez profitez de Bonballon sans
+                        inscription.</p>
 
                     <div class="row text-center padding-bloc">
                         <div class="col-sm-4">
@@ -109,10 +116,7 @@
 
             <div class="bg-white">
                 <div class="container padding-bloc-double home-options">
-
-                    <h1 class="text-center">
-                        Tirages aléatoires équilibrés
-                    </h1>
+                    <h2 class="text-center">Tirages aléatoires équilibrés</h2>
                     <p class="text-center">
                         Attribuez une note allant de 1 à 5 à vos participants et obtenez des équipes
                         aleatoires équilibrées.
@@ -124,7 +128,8 @@
                             </span>
                             <h3>Nul à chier</h3>
                             <p>
-                                Aucune coordination motrice, il ne maitrise pas son ballon, ne sait pas faire une passe et un contrôle. 
+                                Aucune coordination motrice, il ne maitrise pas son ballon, ne sait pas faire une passe
+                                et un contrôle.
                                 Il ne fait pas d’effort physiques pour rattraper ses faiblesses techniques.
                                 Régulier dans la nullité.
                             </p>
@@ -136,9 +141,10 @@
                             </span>
                             <h3>13h30 Villefranche</h3>
                             <p>
-                                Beaucoup de déchets techniques dans les passes et les contrôles, 
-                                il n’a pas la vision du jeu mais il peut surprendre dans certains matchs par quelques coups de génie.
-                                Il a envie de bien faire et se rattrape pas ses efforts défensifs.  
+                                Beaucoup de déchets techniques dans les passes et les contrôles,
+                                il n’a pas la vision du jeu mais il peut surprendre dans certains matchs par quelques
+                                coups de génie.
+                                Il a envie de bien faire et se rattrape pas ses efforts défensifs.
                             </p>
                         </div>
                         <div class="col-sm-3">
@@ -150,8 +156,10 @@
                             <h3>Bon soldat</h3>
                             <p>
                                 Un joueur qui possède un peu de ballon et des bases solides.
-                                Quelques déchets techniques par moment mais sait aligner une passe, un contrôle et une frappe.
-                                Dommage, il manque de régularité mais peut peser sur une rencontre lorsqu’il est en forme.  
+                                Quelques déchets techniques par moment mais sait aligner une passe, un contrôle et une
+                                frappe.
+                                Dommage, il manque de régularité mais peut peser sur une rencontre lorsqu’il est en
+                                forme.
                             </p>
                         </div>
                         <div class="col-sm-3">
@@ -165,7 +173,8 @@
                             <p>
                                 Joueur régulier avec très peu de déchets techniques.
                                 Il sait défendre et attaquer.
-                                Par ses qualités techniques et sa vision du jeu, il a une influence sur le jeu et son équipe. 
+                                Par ses qualités techniques et sa vision du jeu, il a une influence sur le jeu et son
+                                équipe.
                             </p>
                         </div>
                         <div class="col-sm-3">
@@ -178,7 +187,8 @@
                             </span>
                             <h3>Masterclass</h3>
                             <p>
-                                Bon dans tous les domaines, c’est un joueur très précis dans ses passes, ses contrôles et ses frappes.
+                                Bon dans tous les domaines, c’est un joueur très précis dans ses passes, ses contrôles
+                                et ses frappes.
                                 Il peut éliminer des joueurs facilement par ses dribbles.
                                 Joueur pouvant faire basculer la rencontre à lui tout seul.
                             </p>
@@ -189,9 +199,9 @@
 
             <div class="bg-grey">
                 <div class="container padding-bloc-double home-domains">
-                    <h1 class="text-center">
+                    <h2 class="text-center">
                         Bonballon vous aide dans de nombreux domaines
-                    </h1>
+                    </h2>
                     <div class="row text-center padding-bloc">
                         <div class="col-sm-3">
                             <span>
@@ -213,7 +223,6 @@
                                 favoris.
                             </p>
                         </div>
-
                         <div class="col-sm-3">
                             <span>
                                 <i class="fa fa-graduation-cap"></i>
@@ -224,7 +233,6 @@
                                 cours.
                             </p>
                         </div>
-
                         <div class="col-sm-3">
                             <span>
                                 <i class="fa fa-smile-o"></i>
@@ -234,22 +242,15 @@
                                 Fêtes, événements spéciaux, jeux de plateau, escape game et bien d&#039;autres encore.
                             </p>
                         </div>
-
                     </div>
-
                 </div>
             </div>
 
             <div class="bg-white">
                 <div class="container padding-bloc-double home-features">
-
-                    <h1 class="text-center">
-                        Fonctionnalités
-                    </h1>
-
+                    <h2 class="text-center">Fonctionnalités</h2>
                     <div class="padding-bloc-small"></div>
                     <div class="row text-center padding-bloc-small">
-
                         <div class="col-sm-4">
                             <i class="fa fa-random"></i>
                             <h3>Aléatoire</h3>
@@ -257,26 +258,13 @@
                                 Ne perdez plus de temps. Laissez faire le hasard pour tirer des équipes.
                             </p>
                         </div>
-
                         <div class="col-sm-4">
                             <i class="fa fa-flask"></i>
                             <h3>Critères</h3>
                             <p>
                                 Équipes équilibrées, profitez de la puissance de nos algorithmes.
                             </p>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <i class="fa fa-lock"></i>
-                            <h3>Sécurité</h3>
-                            <p>
-                                Les tirages sur Bonballon sont anonymes, sécurisés et privés.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class="row text-center padding-bloc-small">
+                        </div> 
                         <div class="col-sm-4">
                             <i class="fa fa-mobile"></i>
                             <h3>Mobile friendly</h3>
@@ -284,15 +272,13 @@
                                 Bonballon est optimisé pour s&#039;adapter aux smartphones et aux tablettes.
                             </p>
                         </div>
-
                         <div class="col-sm-4">
                             <i class="fa fa-share-alt"></i>
                             <h3>Partager</h3>
                             <p>
-                                Partagez directement vos tirages sur Facebook, Twitter et Reddit.
+                                Partagez directement vos tirages sur WhatsApp.
                             </p>
                         </div>
-
                         <div class="col-sm-4">
                             <i class="fa fa-list"></i>
                             <h3>Listes</h3>
@@ -300,29 +286,20 @@
                                 Sauvegardez vos participants et vos équipes afin de les réutiliser plus tard.
                             </p>
                         </div>
-
                     </div>
-
                 </div>
-
-                <div class="text-center home-features-button">
-                    <a class="btn orange-btn large-keamk-btn" href="features.html">Toutes les fonctionnalités</a>
-                </div>
-
             </div>
         </div>
-
-
     </div>
 
-<footer>
-    <div class="footer-second padding-bloc">
-        <div class="container text-center k-font-14">
-            <p>&copy; 2023 Bonballon</p>
-            <p>Réalisé par <a class="link-ext" href="https://xrweb06.netlify.app">XR Web</a></p>
+    <footer>
+        <div class="footer-second padding-bloc">
+            <div class="container text-center k-font-14">
+                <p>&copy; 2023 Bonballon</p>
+                <p>Réalisé par <a class="link-ext" href="https://xrweb06.netlify.app">XR Web</a></p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- Button to scroll to top -->
     <div class="scroll-to-top">
@@ -332,8 +309,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery/1.11.3/jquery.min.js"></script>
     <script src="bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="js/routing.json"></script>
-    <script src="js/main.js"></script>  
+    <script src="js/main.js"></script>
+    <script src="js/pwa.js"></script>
 
 </body>
 

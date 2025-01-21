@@ -16,7 +16,7 @@
     transform: translateY(-5px);
 }
 
-h1 {
+#draw-title {
     margin-bottom: 20px;
     font-weight: 600;
     color: #f8f9fa;
