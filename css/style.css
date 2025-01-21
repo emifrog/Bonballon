@@ -1309,3 +1309,129 @@ h2 {
         text-align: center;
     }
 }
+
+/* PWA Styles */
+.install-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #23468C;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.install-button:hover {
+    background: #1A5B9D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.install-button i {
+    margin-right: 8px;
+}
+
+.installed-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+}
+
+.update-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #FF9800;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+}
+
+.update-notification button {
+    background: white;
+    color: #FF9800;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.update-notification button:hover {
+    background: #f5f5f5;
+}
+
+.offline-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #f44336;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+    animation: slideDown 0.3s ease;
+}
+
+.offline-message i {
+    margin-right: 8px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Styles pour le mode hors ligne */
+body.offline {
+    filter: grayscale(0.3);
+}
+
+body.offline button:not(.update-notification button):not(.install-button) {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .install-button {
+        bottom: 70px;
+    }
+    
+    .update-notification {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+}
