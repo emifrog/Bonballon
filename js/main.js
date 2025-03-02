@@ -449,33 +449,107 @@
 
                 // Créer les équipes
                 var teams = Array.from({ length: numTeams }, () => []);
-                var currentTeam = 0;
-
+                
                 // Si le mode niveau est activé
                 if (t('input[name="mix[typeMix]"]:checked').val() === '2') {
-                    // Trier par niveau
+                    // Trier par niveau (du plus élevé au plus bas)
                     participants.sort((a, b) => b.level - a.level);
+                    
+                    // Méthode améliorée de distribution pour équilibrer les équipes
+                    // Approche de "bin packing" modifiée
+                    
+                    // Initialiser les scores d'équipe à 0
+                    var teamScores = Array(numTeams).fill(0);
+                    
+                    // Distribuer les joueurs un par un
+                    participants.forEach(participant => {
+                        // Trouver l'équipe avec le score total le plus bas
+                        var minScoreIndex = 0;
+                        for (var i = 1; i < numTeams; i++) {
+                            if (teamScores[i] < teamScores[minScoreIndex]) {
+                                minScoreIndex = i;
+                            }
+                        }
+                        
+                        // Ajouter le joueur à l'équipe avec le score le plus bas
+                        teams[minScoreIndex].push(participant);
+                        teamScores[minScoreIndex] += participant.level;
+                    });
+                    
+                    // Mélanger légèrement l'ordre des joueurs dans chaque équipe pour éviter
+                    // que les joueurs de même niveau soient toujours regroupés
+                    teams.forEach(team => {
+                        // Regrouper les joueurs par niveau
+                        var playersByLevel = {};
+                        team.forEach(player => {
+                            if (!playersByLevel[player.level]) {
+                                playersByLevel[player.level] = [];
+                            }
+                            playersByLevel[player.level].push(player);
+                        });
+                        
+                        // Mélanger les joueurs de chaque niveau
+                        Object.keys(playersByLevel).forEach(level => {
+                            var players = playersByLevel[level];
+                            for (let i = players.length - 1; i > 0; i--) {
+                                const j = Math.floor(Math.random() * (i + 1));
+                                [players[i], players[j]] = [players[j], players[i]];
+                            }
+                        });
+                        
+                        // Reconstruire l'équipe
+                        var newTeam = [];
+                        Object.keys(playersByLevel).sort((a, b) => b - a).forEach(level => {
+                            newTeam = newTeam.concat(playersByLevel[level]);
+                        });
+                        
+                        // Remplacer l'équipe originale par la nouvelle équipe mélangée
+                        team.length = 0;
+                        newTeam.forEach(player => team.push(player));
+                    });
+                } else {
+                    // Distribution normale pour le mode standard
+                    var currentTeam = 0;
+                    
+                    // Distribuer les joueurs
+                    participants.forEach(participant => {
+                        teams[currentTeam].push(participant);
+                        currentTeam = (currentTeam + 1) % numTeams;
+                    });
                 }
-
-                // Distribuer les joueurs
-                participants.forEach(participant => {
-                    teams[currentTeam].push(participant);
-                    currentTeam = (currentTeam + 1) % numTeams;
-                });
 
                 return teams;
             };
-
             displayTeams = function(teams) {
                 var resultsHtml = '<div class="results-container">';
+                
+                // Calculer les scores d'équipe si le mode niveau est activé
+                var isLevelMode = t('input[name="mix[typeMix]"]:checked').val() === '2';
+                var teamScores = [];
+                
+                if (isLevelMode) {
+                    // Calculer le score total pour chaque équipe (somme des niveaux)
+                    teams.forEach(team => {
+                        var teamScore = team.reduce((sum, player) => sum + player.level, 0);
+                        teamScores.push(teamScore);
+                    });
+                }
+                
                 teams.forEach((team, index) => {
                     resultsHtml += '<div class="team-result">';
-                    resultsHtml += '<h3>Équipe ' + (index + 1) + '</h3>';
+                    resultsHtml += '<h3>Équipe ' + (index + 1);
+                    
+                    // Afficher le score d'équipe si le mode niveau est activé
+                    if (isLevelMode) {
+                        resultsHtml += ' <span class="team-score">(Score: ' + teamScores[index] + ')</span>';
+                    }
+                    
+                    resultsHtml += '</h3>';
                     resultsHtml += '<ul>';
                     team.forEach(player => {
                         resultsHtml += '<li>' + player.name;
-                        if (t('input[name="mix[typeMix]"]:checked').val() === '2') {
-                            resultsHtml += ' (Niveau: ' + player.level + ')';
+                        if (isLevelMode) {
+                            resultsHtml += ' <span class="player-level" data-level="' + player.level + '">(Niveau: ' + player.level + ')</span>';
                         }
                         resultsHtml += '</li>';
                     });
@@ -488,6 +562,57 @@
                     t('.main-container').append('<div id="teams-results"></div>');
                 }
                 t('#teams-results').html(resultsHtml);
+                
+                // Afficher des statistiques sur l'équilibrage des équipes si le mode niveau est activé
+                if (isLevelMode && teamScores.length > 0) {
+                    var statsHtml = '<div class="team-stats">';
+                    
+                    // Calculer la moyenne des scores d'équipe
+                    var avgScore = teamScores.reduce((sum, score) => sum + score, 0) / teamScores.length;
+                    avgScore = Math.round(avgScore * 100) / 100; // Arrondir à 2 décimales
+                    
+                    // Calculer l'écart-type des scores d'équipe
+                    var variance = teamScores.reduce((sum, score) => sum + Math.pow(score - avgScore, 2), 0) / teamScores.length;
+                    var stdDev = Math.sqrt(variance);
+                    stdDev = Math.round(stdDev * 100) / 100; // Arrondir à 2 décimales
+                    
+                    statsHtml += '<p>Score moyen par équipe: <strong>' + avgScore + '</strong></p>';
+                    statsHtml += '<p>Écart-type: <strong>' + stdDev + '</strong> (plus cette valeur est basse, plus les équipes sont équilibrées)</p>';
+                    
+                    // Ajouter un bouton pour regénérer les équipes
+                    statsHtml += '<button id="regenerate-teams" class="btn orange-btn middle-keamk-btn">Regénérer les équipes</button>';
+                    
+                    statsHtml += '</div>';
+                    
+                    // Ajouter les statistiques après les résultats
+                    t('#teams-results').append(statsHtml);
+                    
+                    // Ajouter un gestionnaire d'événements pour le bouton de regénération
+                    t('#regenerate-teams').on('click', function() {
+                        // Récupérer les participants et le nombre d'équipes depuis localStorage
+                        var drawResults = JSON.parse(localStorage.getItem('drawResults'));
+                        var participants = [];
+                        
+                        // Extraire les participants de toutes les équipes
+                        drawResults.teams.forEach(team => {
+                            team.forEach(player => {
+                                participants.push(player);
+                            });
+                        });
+                        
+                        var numTeams = drawResults.teams.length;
+                        
+                        // Générer de nouvelles équipes
+                        var newTeams = generateRandomTeams(participants, numTeams);
+                        
+                        // Mettre à jour les résultats dans localStorage
+                        drawResults.teams = newTeams;
+                        localStorage.setItem('drawResults', JSON.stringify(drawResults));
+                        
+                        // Afficher les nouvelles équipes
+                        displayTeams(newTeams);
+                    });
+                }
             };
             copyToClipboard = function () {
                 t('.copytoclip').click(function () {

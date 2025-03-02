@@ -143,6 +143,72 @@
     box-shadow: none;
 }
 
+.player-level {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #555;
+    font-size: 0.85em;
+    margin-left: 8px;
+}
+
+.team-score {
+    display: inline-block;
+    font-size: 0.85em;
+    color: #e74c3c;
+    font-weight: normal;
+    margin-left: 8px;
+    padding: 2px 8px;
+    background-color: #f9f2f2;
+    border-radius: 4px;
+}
+
+/* Styles pour les niveaux spécifiques */
+.player-level[data-level="1"] {
+    background-color: #e6f7ff;
+    color: #0066cc;
+}
+
+.player-level[data-level="2"] {
+    background-color: #e6ffe6;
+    color: #008000;
+}
+
+.player-level[data-level="3"] {
+    background-color: #fff2e6;
+    color: #ff8000;
+}
+
+.player-level[data-level="4"] {
+    background-color: #ffe6e6;
+    color: #cc0000;
+}
+
+.player-level[data-level="5"] {
+    background-color: #f2e6ff;
+    color: #6600cc;
+}
+
+/* Styles pour la section des statistiques d'équipe */
+.team-stats {
+    background: #fff;
+    border-radius: 8px;
+    margin: 20px 0;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.team-stats p {
+    margin: 10px 0;
+    color: #2c3e50;
+}
+
+.team-stats strong {
+    color: #e74c3c;
+}
+
 /* Styles pour l'impression */
 @media print {
     .navbar, 
