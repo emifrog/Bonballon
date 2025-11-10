@@ -6,6 +6,9 @@ $(document).ready(function() {
         return;
     }
 
+    // Sauvegarder dans l'historique
+    saveToHistory(drawData);
+
     // Afficher le titre
     $('#draw-title').text(drawData.title);
 
@@ -67,6 +70,171 @@ $(document).ready(function() {
         window.open(whatsappUrl);
     });
 
-    // Nettoyer le localStorage après affichage
+    // Gérer l'export en image
+    $('#export-image').click(function() {
+        exportAsImage();
+    });
+
+    // Gérer l'export en PDF
+    $('#export-pdf').click(function() {
+        exportAsPDF();
+    });
+
+    // Gérer l'accès à l'historique
+    $('#view-history').click(function() {
+        window.location.href = 'history.html';
+    });
+
+    // Nettoyer le localStorage temporaire après affichage
     localStorage.removeItem('drawResults');
+
+    // ========== FONCTIONS D'HISTORIQUE ==========
+    
+    function saveToHistory(data) {
+        // Ajouter un timestamp et un ID unique
+        var historyItem = {
+            id: Date.now(),
+            timestamp: new Date().toISOString(),
+            title: data.title,
+            teams: data.teams,
+            isLevelMode: data.isLevelMode
+        };
+
+        // Récupérer l'historique existant
+        var history = JSON.parse(localStorage.getItem('drawHistory')) || [];
+        
+        // Ajouter le nouveau tirage au début
+        history.unshift(historyItem);
+        
+        // Limiter à 50 tirages maximum
+        if (history.length > 50) {
+            history = history.slice(0, 50);
+        }
+        
+        // Sauvegarder
+        localStorage.setItem('drawHistory', JSON.stringify(history));
+    }
+
+    // ========== FONCTIONS D'EXPORT ==========
+    
+    function exportAsImage() {
+        // Utiliser html2canvas pour capturer le contenu
+        var element = document.getElementById('teams-results');
+        
+        // Créer un conteneur temporaire avec le titre
+        var exportContainer = document.createElement('div');
+        exportContainer.style.padding = '20px';
+        exportContainer.style.backgroundColor = 'white';
+        exportContainer.style.fontFamily = 'Open Sans, sans-serif';
+        
+        var titleElement = document.createElement('h1');
+        titleElement.textContent = drawData.title;
+        titleElement.style.textAlign = 'center';
+        titleElement.style.marginBottom = '20px';
+        titleElement.style.color = '#23468C';
+        
+        exportContainer.appendChild(titleElement);
+        exportContainer.appendChild(element.cloneNode(true));
+        
+        // Ajouter temporairement au DOM
+        document.body.appendChild(exportContainer);
+        
+        // Vérifier si html2canvas est disponible
+        if (typeof html2canvas === 'undefined') {
+            alert('La bibliothèque html2canvas n\'est pas chargée. Veuillez réessayer.');
+            document.body.removeChild(exportContainer);
+            return;
+        }
+        
+        html2canvas(exportContainer, {
+            backgroundColor: '#ffffff',
+            scale: 2
+        }).then(function(canvas) {
+            // Convertir en image
+            var link = document.createElement('a');
+            link.download = 'bonballon-' + drawData.title.replace(/\s+/g, '-').toLowerCase() + '.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            
+            // Nettoyer
+            document.body.removeChild(exportContainer);
+        }).catch(function(error) {
+            console.error('Erreur lors de l\'export:', error);
+            alert('Erreur lors de l\'export de l\'image');
+            document.body.removeChild(exportContainer);
+        });
+    }
+    
+    function exportAsPDF() {
+        // Vérifier si jsPDF est disponible
+        if (typeof jspdf === 'undefined' && typeof window.jspdf === 'undefined') {
+            alert('La bibliothèque jsPDF n\'est pas chargée. Veuillez réessayer.');
+            return;
+        }
+        
+        var element = document.getElementById('teams-results');
+        
+        // Créer un conteneur temporaire
+        var exportContainer = document.createElement('div');
+        exportContainer.style.padding = '20px';
+        exportContainer.style.backgroundColor = 'white';
+        exportContainer.style.fontFamily = 'Open Sans, sans-serif';
+        
+        var titleElement = document.createElement('h1');
+        titleElement.textContent = drawData.title;
+        titleElement.style.textAlign = 'center';
+        titleElement.style.marginBottom = '20px';
+        titleElement.style.color = '#23468C';
+        
+        exportContainer.appendChild(titleElement);
+        exportContainer.appendChild(element.cloneNode(true));
+        
+        document.body.appendChild(exportContainer);
+        
+        if (typeof html2canvas === 'undefined') {
+            alert('La bibliothèque html2canvas n\'est pas chargée. Veuillez réessayer.');
+            document.body.removeChild(exportContainer);
+            return;
+        }
+        
+        html2canvas(exportContainer, {
+            backgroundColor: '#ffffff',
+            scale: 2
+        }).then(function(canvas) {
+            var imgData = canvas.toDataURL('image/png');
+            
+            // Utiliser jsPDF
+            var { jsPDF } = window.jspdf;
+            var pdf = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: 'a4'
+            });
+            
+            var imgWidth = 190;
+            var pageHeight = 277;
+            var imgHeight = (canvas.height * imgWidth) / canvas.width;
+            var heightLeft = imgHeight;
+            var position = 10;
+            
+            pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+            
+            while (heightLeft >= 0) {
+                position = heightLeft - imgHeight;
+                pdf.addPage();
+                pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+            }
+            
+            pdf.save('bonballon-' + drawData.title.replace(/\s+/g, '-').toLowerCase() + '.pdf');
+            
+            // Nettoyer
+            document.body.removeChild(exportContainer);
+        }).catch(function(error) {
+            console.error('Erreur lors de l\'export:', error);
+            alert('Erreur lors de l\'export du PDF');
+            document.body.removeChild(exportContainer);
+        });
+    }
 });

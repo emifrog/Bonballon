@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Résultats du tirage - Bonballon">
+    <meta name="description" content="Historique des tirages - Bonballon">
     <meta name="theme-color" content="#23468C">
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -22,13 +22,9 @@
     <link type="text/css" rel="stylesheet" href="css/style.css" media="all" />
     <link type="text/css" rel="stylesheet" href="css/teams.css" media="all" />
         
-    <title>Résultats du tirage - Bonballon</title>
+    <title>Historique des tirages - Bonballon</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-    
-    <!-- Bibliothèques pour l'export -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
 <body>
@@ -58,31 +54,34 @@
     <div class="main-container">
         <div class="bg-dark-grey">
             <div class="container padding-bloc-result">
-                <h1 id="draw-title" class="text-center text-white"></h1>
+                <h1 class="text-center text-white"><i class="fa fa-history"></i> Historique des tirages</h1>
             </div>
         </div>
 
         <div class="container">
-            <div id="teams-results" class="results-container">
-                <!-- Les équipes seront insérées ici par JavaScript -->
-            </div>
-
-            <div class="text-center margin-top-20">
-                <button id="new-draw" class="btn orange-btn" onclick="window.location.href='index.html'">
-                    <i class="fa fa-refresh"></i> Nouveau tirage
-                </button>
-                <button id="share-whatsapp" class="btn btn-success">
-                    <i class="fab fa-whatsapp"></i> Partager
-                </button>
-                <button id="export-image" class="btn btn-info">
-                    <i class="fa fa-image"></i> Export Image
-                </button>
-                <button id="export-pdf" class="btn btn-warning">
-                    <i class="fa fa-file-pdf"></i> Export PDF
-                </button>
-                <button id="view-history" class="btn btn-default">
-                    <i class="fa fa-history"></i> Historique
-                </button>
+            <div class="margin-top-20 margin-bottom-20">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-right margin-bottom-10">
+                            <button id="clear-history" class="btn btn-danger">
+                                <i class="fa fa-trash"></i> Effacer l'historique
+                            </button>
+                        </div>
+                        
+                        <div id="history-container">
+                            <!-- L'historique sera inséré ici par JavaScript -->
+                        </div>
+                        
+                        <div id="no-history" class="text-center" style="display: none; padding: 50px;">
+                            <i class="fa fa-inbox" style="font-size: 64px; color: #ccc; margin-bottom: 20px;"></i>
+                            <h3>Aucun tirage dans l'historique</h3>
+                            <p>Vos tirages apparaîtront ici après leur création.</p>
+                            <a href="index.html" class="btn orange-btn">
+                                <i class="fa fa-plus"></i> Créer un tirage
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -103,7 +102,7 @@
 
     <script src="js/jquery/1.11.3/jquery.min.js"></script>
     <script src="bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="js/results.js"></script>
+    <script src="js/history.js"></script>
     <script src="js/pwa.js"></script>
 
 </body>

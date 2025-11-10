@@ -209,11 +209,117 @@
     color: #e74c3c;
 }
 
+/* Styles pour la page d'historique */
+.history-item {
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.history-item:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.history-item .panel-heading {
+    background-color: #23468C;
+    color: white;
+    border-radius: 4px 4px 0 0;
+}
+
+.history-item .panel-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.team-history {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    height: 100%;
+}
+
+.team-history h4 {
+    color: #23468C;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid #8C0303;
+    padding-bottom: 8px;
+}
+
+.team-history ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.team-history ul li:last-child {
+    border-bottom: none;
+}
+
+.team-history ul li i.fa-user {
+    color: #23468C;
+    margin-right: 8px;
+}
+
+#export-image,
+#export-pdf {
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+#export-image {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+#export-image:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#export-pdf {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+}
+
+#export-pdf:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#view-history {
+    margin-bottom: 20px;
+    margin-left: 5px;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+#view-history:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 /* Styles pour l'impression */
 @media print {
     .navbar, 
     #new-draw,
-    #print-results {
+    #print-results,
+    #share-whatsapp,
+    #export-image,
+    #export-pdf,
+    #view-history {
         display: none !important;
     }
 

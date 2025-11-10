@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mode hors ligne - Bonballon">
+    <meta name="theme-color" content="#23468C">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700%7CMontserrat' rel='stylesheet'
+        type='text/css'>
+    <link type="text/css" rel="stylesheet" href="css/style.css" media="all" />
+    
+    <title>Mode hors ligne - Bonballon</title>
+    
+    <style>
+        .offline-container {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .offline-icon {
+            font-size: 120px;
+            color: #23468C;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .offline-title {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .offline-text {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .offline-features {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+            max-width: 600px;
+        }
+        
+        .offline-features h3 {
+            color: #23468C;
+            margin-bottom: 20px;
+        }
+        
+        .offline-features ul {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .offline-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .offline-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .offline-features i {
+            color: #28a745;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Static navbar -->
+    <header class="navbar navbar-custom nav-bar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Logo Bonballon"></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="container">
+            <div class="offline-container">
+                <div class="offline-icon">
+                    <i class="fa fa-wifi"></i>
+                </div>
+                
+                <h1 class="offline-title">Mode hors ligne</h1>
+                
+                <p class="offline-text">
+                    Vous n'êtes pas connecté à Internet. Certaines fonctionnalités sont toujours disponibles grâce au mode hors ligne de Bonballon.
+                </p>
+                
+                <button class="btn orange-btn" onclick="window.location.reload()">
+                    <i class="fa fa-refresh"></i> Réessayer
+                </button>
+                
+                <div class="offline-features">
+                    <h3><i class="fa fa-check-circle"></i> Fonctionnalités disponibles hors ligne</h3>
+                    <ul>
+                        <li>
+                            <i class="fa fa-check"></i>
+                            <strong>Créer des tirages</strong> - Générez vos équipes même sans connexion
+                        </li>
+                        <li>
+                            <i class="fa fa-check"></i>
+                            <strong>Consulter l'historique</strong> - Accédez à vos tirages précédents
+                        </li>
+                        <li>
+                            <i class="fa fa-check"></i>
+                            <strong>Exporter en image</strong> - Téléchargez vos résultats
+                        </li>
+                        <li>
+                            <i class="fa fa-times text-danger"></i>
+                            <strong>Partage WhatsApp</strong> - Nécessite une connexion Internet
+                        </li>
+                        <li>
+                            <i class="fa fa-times text-danger"></i>
+                            <strong>Export PDF</strong> - Nécessite une connexion Internet
+                        </li>
+                    </ul>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fa fa-home"></i> Retour à l'accueil
+                    </a>
+                    <a href="history.html" class="btn btn-default">
+                        <i class="fa fa-history"></i> Voir l'historique
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-second padding-bloc">
+            <div class="container text-center k-font-14">
+                <p>&copy; 2023 Bonballon</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+</html>

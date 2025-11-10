@@ -1,10 +1,13 @@
-const CACHE_NAME = 'bonballon-v1';
+const CACHE_NAME = 'bonballon-v2';
 const urlsToCache = [
     '/',
     '/index.html',
     '/results.html',
+    '/history.html',
     '/about.html',
     '/contact.html',
+    '/features.html',
+    '/offline.html',
     '/manifest.json',
     
     // Styles
@@ -18,9 +21,12 @@ const urlsToCache = [
     // Scripts
     '/js/main.js',
     '/js/results.js',
+    '/js/history.js',
     '/js/pwa.js',
     '/js/jquery/1.11.3/jquery.min.js',
     '/bootstrap/3.3.5/js/bootstrap.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',
     
     // Images
     '/images/logo.png',
