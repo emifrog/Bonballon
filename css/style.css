@@ -163,6 +163,7 @@ a:focus {
     line-height: 36px;
     color: #fff;
     background-color: #8C0303;
+    border-radius: 50%;
     cursor: pointer;
     z-index: 300;
     -webkit-transition: background-color 0.2s ease-in-out 0s;
