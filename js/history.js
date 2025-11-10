@@ -41,7 +41,7 @@ $(document).ready(function() {
         historyHtml += '<div class="history-item panel panel-default" data-id="' + item.id + '">';
         historyHtml += '<div class="panel-heading">';
         historyHtml += '<h3 class="panel-title">';
-        historyHtml += '<i class="fa fa-calendar"></i> ' + item.title;
+        historyHtml += '<i class="fa fa-futbol-o"></i> ' + item.title;
         historyHtml += '<span class="pull-right text-muted" style="font-size: 12px;">' + formatDate(item.timestamp) + '</span>';
         historyHtml += '</h3>';
         historyHtml += '</div>';

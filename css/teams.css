@@ -225,6 +225,11 @@
     border-radius: 4px 4px 0 0;
 }
 
+.history-title {
+    font-weight: 600;
+    color: #f8f9fa;
+}
+
 .history-item .panel-title {
     font-size: 18px;
     font-weight: 600;
@@ -259,6 +264,12 @@
 .team-history ul li i.fa-user {
     color: #23468C;
     margin-right: 8px;
+}
+
+.pull-right {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
 }
 
 #export-image,
@@ -300,6 +311,9 @@
 #view-history {
     margin-bottom: 20px;
     margin-left: 5px;
+    background-color: #bd0606;
+    color: white;
+    border-color: #8C0303;
     border-radius: 8px;
     font-weight: 600;
     padding: 10px 20px;
