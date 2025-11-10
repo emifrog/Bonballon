@@ -43,6 +43,11 @@ $(document).ready(function() {
 
     $('#teams-results').html(resultsHtml);
 
+    // Initialiser les statistiques si le module est disponible
+    if (window.BonballonStats && drawData.isLevelMode) {
+        window.BonballonStats.init(drawData);
+    }
+
     // Fonction pour générer le texte du message WhatsApp
     function generateWhatsAppMessage() {
         var message = drawData.title + "\n\n";
@@ -83,6 +88,48 @@ $(document).ready(function() {
     // Gérer l'accès à l'historique
     $('#view-history').click(function() {
         window.location.href = 'history.html';
+    });
+
+    // Afficher le bouton "Enregistrer le match" si le module compétition est disponible
+    if (window.BonballonCompetition) {
+        $('#save-match').show();
+    }
+
+    // Gérer l'enregistrement du match
+    $('#save-match').click(function() {
+        if (!window.BonballonCompetition) {
+            alert('Le module de compétition n\'est pas disponible');
+            return;
+        }
+
+        // Préparer les données du match
+        var matchData = {
+            date: Date.now(),
+            title: drawData.title,
+            teams: drawData.teams.map((team, index) => {
+                // Calculer le score de l'équipe (somme des niveaux si mode niveau)
+                var score = 0;
+                if (drawData.isLevelMode) {
+                    score = team.reduce((sum, player) => sum + (player.level || 0), 0);
+                }
+                
+                return {
+                    name: 'Équipe ' + (index + 1),
+                    players: team,
+                    score: drawData.isLevelMode ? score : undefined
+                };
+            })
+        };
+
+        // Enregistrer le match
+        var matchId = window.BonballonCompetition.recordMatch(matchData);
+        
+        if (matchId) {
+            alert('Match enregistré avec succès dans le mode compétition !');
+            $(this).prop('disabled', true).html('<i class="fa fa-check"></i> Match enregistré');
+        } else {
+            alert('Erreur lors de l\'enregistrement du match');
+        }
     });
 
     // Nettoyer le localStorage temporaire après affichage

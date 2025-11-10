@@ -3,10 +3,14 @@
     "short_name": "Bonballon",
     "description": "Générateur d'équipes aléatoires pour vos activités sportives",
     "start_url": "/index.html",
+    "scope": "/",
     "display": "standalone",
     "background_color": "#23468C",
     "theme_color": "#23468C",
     "orientation": "portrait-primary",
+    "categories": ["sports", "utilities", "productivity"],
+    "lang": "fr-FR",
+    "dir": "ltr",
     "icons": [
         {
             "src": "images/icons/icon-48x48.png",

@@ -1324,6 +1324,104 @@ h2 {
     }
 }
 
+/* Section Contraintes Personnalisées */
+.toggle-it {
+    cursor: pointer;
+    margin-left: 20px;
+    color: #999999;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#constraints-section .constraint-item {
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#constraints-section .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+#constraints-section .form-control {
+    flex: 1 1 auto;
+    min-width: 120px;
+    max-width: 100%;
+}
+
+#constraints-section .player-select-1,
+#constraints-section .player-select-2,
+#constraints-section .captain-player-select {
+    flex: 1 1 200px;
+}
+
+#constraints-section .captain-team-select {
+    flex: 0 1 120px;
+}
+
+#constraints-section span:not(.input-group-btn) {
+    color: white;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+#constraints-section .input-group-btn {
+    flex-shrink: 0;
+}
+
+#constraints-section .btn-sm {
+    padding: 6px 12px;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .toggle-it {
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    
+    #constraints-section .constraint-item {
+        padding: 15px 10px;
+    }
+    
+    #constraints-section .input-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    #constraints-section .form-control {
+        width: 100% !important;
+        max-width: 100%;
+        display: block !important;
+    }
+    
+    #constraints-section .player-select-1,
+    #constraints-section .player-select-2,
+    #constraints-section .captain-player-select,
+    #constraints-section .captain-team-select {
+        width: 100% !important;
+        flex: 1 1 100%;
+    }
+    
+    #constraints-section span:not(.input-group-btn) {
+        text-align: center;
+        padding: 5px 0 !important;
+    }
+    
+    #constraints-section .input-group-btn {
+        width: 100%;
+    }
+    
+    #constraints-section .input-group-btn .btn {
+        width: 100%;
+    }
+}
+
 /* PWA Styles */
 .install-button {
     position: fixed;

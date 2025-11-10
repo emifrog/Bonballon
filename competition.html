@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mode Compétition - Bonballon">
+    <meta name="theme-color" content="#23468C">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Bonballon">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="images/favicon.png">
+    <link rel="stylesheet" href="bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700%7CMontserrat' rel='stylesheet'
+        type='text/css'>
+        
+    <link type="text/css" rel="stylesheet" href="css/style.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="css/teams.css" media="all" />
+        
+    <title>Mode Compétition - Bonballon</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <style>
+        .leaderboard-table {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .leaderboard-table th {
+            background: #23468C;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .leaderboard-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        .leaderboard-table tr:hover {
+            background: #f5f5f5;
+        }
+        .rank-1 { background: #FFD700 !important; font-weight: bold; }
+        .rank-2 { background: #C0C0C0 !important; }
+        .rank-3 { background: #CD7F32 !important; }
+        
+        .match-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        .match-date {
+            color: #666;
+            font-size: 14px;
+        }
+        .match-teams {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .match-team {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #23468C;
+        }
+        .match-team.winner {
+            border-left-color: #28a745;
+            background: #d4edda;
+        }
+        .match-team-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .match-actions {
+            margin-top: 10px;
+            text-align: right;
+        }
+        .stats-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .stats-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #23468C;
+        }
+        .stats-label {
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Static navbar -->
+    <header class="navbar navbar-custom nav-bar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Logo Bonballon"></a>
+            </div>
+            <nav id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html"><i class="fa fa-home"></i> Accueil</a></li>
+                    <li><a href="history.html"><i class="fa fa-history"></i> Historique</a></li>
+                    <li class="active"><a href="competition.html"><i class="fa fa-trophy"></i> Compétition</a></li>
+                    <li><a href="about.html"><i class="fa fa-info-circle"></i> A propos</a></li>
+                    <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bg-grey">
+        <div class="container padding-bloc">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center"><i class="fa fa-trophy"></i> Mode Compétition</h1>
+                    <p class="text-center">Suivez les performances de vos équipes et consultez l'historique des matchs</p>
+                </div>
+            </div>
+
+            <!-- Statistiques globales -->
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-4">
+                    <div class="stats-card">
+                        <div class="stats-number" id="total-matches">0</div>
+                        <div class="stats-label">Matchs joués</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card">
+                        <div class="stats-number" id="total-teams">0</div>
+                        <div class="stats-label">Équipes actives</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card">
+                        <div class="stats-number" id="total-players">0</div>
+                        <div class="stats-label">Joueurs différents</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-md-12 text-center">
+                    <button class="btn orange-btn" id="export-data">
+                        <i class="fa fa-download"></i> Exporter les données
+                    </button>
+                    <button class="btn grey-btn" id="import-data-btn">
+                        <i class="fa fa-upload"></i> Importer des données
+                    </button>
+                    <button class="btn btn-danger" id="reset-competition">
+                        <i class="fa fa-trash"></i> Réinitialiser
+                    </button>
+                    <input type="file" id="import-data-file" accept=".json" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Onglets -->
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-12">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#leaderboard" aria-controls="leaderboard" role="tab" data-toggle="tab">
+                                <i class="fa fa-list-ol"></i> Classement
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#matches" aria-controls="matches" role="tab" data-toggle="tab">
+                                <i class="fa fa-futbol-o"></i> Historique des matchs
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" style="margin-top: 20px;">
+                        <!-- Onglet Classement -->
+                        <div role="tabpanel" class="tab-pane active" id="leaderboard">
+                            <div class="table-responsive">
+                                <table class="table leaderboard-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Rang</th>
+                                            <th>Équipe</th>
+                                            <th>Matchs</th>
+                                            <th>Victoires</th>
+                                            <th>Défaites</th>
+                                            <th>Ratio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="leaderboard-body">
+                                        <tr>
+                                            <td colspan="6" class="text-center">
+                                                Aucune donnée de compétition disponible
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Onglet Historique -->
+                        <div role="tabpanel" class="tab-pane" id="matches">
+                            <div id="matches-list">
+                                <p class="text-center">Aucun match enregistré</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-second padding-bloc">
+            <div class="container text-center k-font-14">
+                <p>&copy; 2023 Bonballon</p>
+                <p>Réalisé par <a class="link-ext" href="https://xrweb06.netlify.app">XR Web</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Button to scroll to top -->
+    <div class="scroll-to-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/competition.js"></script>
+    <script src="js/competition-ui.js"></script>
+    <script src="js/pwa.js"></script>
+
+</body>
+
+</html>

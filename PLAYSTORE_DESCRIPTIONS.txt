@@ -1,0 +1,278 @@
+===========================================
+DESCRIPTIONS POUR GOOGLE PLAY STORE
+===========================================
+
+-------------------------------------------
+TITRE (max 50 caractères)
+-------------------------------------------
+Bonballon - Générateur d'équipes
+(48 caractères) ✅
+
+
+-------------------------------------------
+DESCRIPTION COURTE (max 80 caractères)
+-------------------------------------------
+Créez des équipes équilibrées pour vos activités sportives en quelques clics
+(77 caractères) ✅
+
+
+-------------------------------------------
+DESCRIPTION COMPLÈTE (max 4000 caractères)
+-------------------------------------------
+
+🏃 Bonballon - Le générateur d'équipes intelligent
+
+Organisez vos matchs et activités sportives en créant des équipes parfaitement équilibrées !
+
+✨ FONCTIONNALITÉS PRINCIPALES
+
+🎲 Génération aléatoire
+• Créez des équipes équilibrées instantanément
+• Mode normal ou mode niveau (équilibrage par compétence)
+• Algorithme optimisé pour un équilibrage parfait
+
+⚙️ Contraintes personnalisées
+• Joueurs qui doivent jouer ensemble
+• Joueurs qui doivent être séparés
+• Désignation de capitaines par équipe
+
+🏆 Mode compétition
+• Suivez les victoires de chaque équipe
+• Classement automatique avec podium
+• Historique complet des matchs
+• Déclaration du vainqueur après coup
+
+📊 Statistiques avancées
+• Graphiques de répartition des niveaux
+• Indicateur d'équilibrage (écart-type)
+• Évolution de la qualité des tirages
+• Distribution des joueurs par niveau
+
+📱 AVANTAGES
+
+✅ 100% gratuit, sans publicité
+✅ Fonctionne hors ligne
+✅ Données stockées localement (vie privée)
+✅ Interface moderne et intuitive
+✅ Import/Export des données
+✅ Partage WhatsApp des résultats
+✅ Export PDF des équipes
+
+🎯 PARFAIT POUR
+
+• Football, basketball, volleyball
+• Badminton, tennis, padel
+• Jeux de société en équipe
+• Activités scolaires et associatives
+• Tournois et compétitions
+
+📥 Téléchargez Bonballon et simplifiez l'organisation de vos matchs !
+
+(1 367 caractères) ✅
+
+
+-------------------------------------------
+NOTES DE VERSION 1.0.0
+-------------------------------------------
+
+Version 1.0.0 - Première version
+
+✨ Fonctionnalités :
+• Génération d'équipes aléatoires
+• Mode niveau pour équilibrage par compétence
+• Contraintes personnalisées (joueurs ensemble/séparés, capitaines)
+• Mode compétition avec classement
+• Statistiques et graphiques interactifs
+• Export PDF et partage WhatsApp
+• Fonctionne 100% hors ligne
+• Aucune publicité, respect de la vie privée
+
+
+-------------------------------------------
+MOTS-CLÉS / TAGS
+-------------------------------------------
+équipes, sport, football, tirage, aléatoire, compétition, tournoi, match, basketball, volleyball, badminton, tennis, capitaine, classement, statistiques, graphiques, niveau, équilibrage
+
+
+-------------------------------------------
+CATÉGORIE
+-------------------------------------------
+Sports
+
+
+-------------------------------------------
+TYPE DE CONTENU
+-------------------------------------------
+Tous publics (PEGI 3)
+
+
+-------------------------------------------
+POLITIQUE DE CONFIDENTIALITÉ (URL)
+-------------------------------------------
+https://VOTRE_DOMAINE/privacy-policy.html
+
+
+-------------------------------------------
+EMAIL DE CONTACT
+-------------------------------------------
+contact@bonballon.com
+
+
+-------------------------------------------
+SITE WEB
+-------------------------------------------
+https://bonballon.app (ou votre URL)
+
+
+-------------------------------------------
+SCREENSHOTS RECOMMANDÉS
+-------------------------------------------
+
+Screenshot 1 : Page d'accueil
+- Montrer le formulaire de création d'équipes
+- Mettre en évidence les champs participants et équipes
+- Titre : "Créez vos équipes en quelques clics"
+
+Screenshot 2 : Résultats avec équipes
+- Afficher 2-3 équipes générées
+- Montrer les niveaux avec étoiles
+- Titre : "Équipes équilibrées automatiquement"
+
+Screenshot 3 : Contraintes personnalisées
+- Montrer la section des contraintes
+- Joueurs ensemble/séparés + capitaines
+- Titre : "Personnalisez vos contraintes"
+
+Screenshot 4 : Mode compétition
+- Afficher le classement avec podium
+- Montrer les statistiques des équipes
+- Titre : "Suivez vos compétitions"
+
+Screenshot 5 : Statistiques
+- Graphiques de répartition des niveaux
+- Indicateur d'équilibrage
+- Titre : "Statistiques détaillées"
+
+Screenshot 6 : Historique
+- Liste des tirages précédents
+- Graphique d'évolution
+- Titre : "Consultez votre historique"
+
+
+-------------------------------------------
+FEATURE GRAPHIC (1024x500)
+-------------------------------------------
+
+Éléments à inclure :
+- Logo Bonballon (centré ou à gauche)
+- Slogan : "Créez des équipes équilibrées en un clic"
+- Icônes de sport (ballon, sifflet, etc.)
+- Couleur de fond : #23468C (bleu Bonballon)
+- Texte en blanc pour contraste
+
+
+-------------------------------------------
+ICÔNE DE L'APPLICATION
+-------------------------------------------
+Déjà disponible : images/icons/icon-512x512.png ✅
+
+
+-------------------------------------------
+RÉPONSES AU QUESTIONNAIRE DE CONTENU
+-------------------------------------------
+
+1. Votre application contient-elle des publicités ?
+   ❌ Non
+
+2. Votre application propose-t-elle des achats intégrés ?
+   ❌ Non
+
+3. Votre application collecte-t-elle des données personnelles ?
+   ❌ Non (tout est stocké localement)
+
+4. Votre application est-elle destinée aux enfants ?
+   ✅ Oui, adaptée à tous les âges (mais pas spécifiquement pour enfants)
+
+5. Classification de contenu :
+   ✅ Tous publics (PEGI 3)
+
+6. Votre application nécessite-t-elle des autorisations spéciales ?
+   ⚠️ Stockage (pour export PDF/JSON)
+
+7. Votre application fonctionne-t-elle hors ligne ?
+   ✅ Oui, 100% fonctionnelle hors ligne
+
+
+-------------------------------------------
+INFORMATIONS LÉGALES
+-------------------------------------------
+
+Développeur : XR Web
+Email : contact@bonballon.com
+Adresse : [Votre adresse si nécessaire]
+Politique de confidentialité : https://VOTRE_URL/privacy-policy.html
+
+
+-------------------------------------------
+PRIX
+-------------------------------------------
+Gratuit (0€)
+
+
+-------------------------------------------
+PAYS DE DISTRIBUTION
+-------------------------------------------
+Suggéré :
+- France
+- Belgique
+- Suisse
+- Canada
+- Luxembourg
+- Maroc
+- Tunisie
+- Algérie
+- Sénégal
+- Côte d'Ivoire
+- Tous les pays francophones
+
+Ou : Tous les pays (mondial)
+
+
+-------------------------------------------
+CONSEILS POUR LES SCREENSHOTS
+-------------------------------------------
+
+1. Utiliser un appareil avec résolution 1080x1920 ou 1080x2340
+2. Capturer en mode portrait
+3. Ajouter du texte explicatif sur les images (optionnel mais recommandé)
+4. Utiliser des couleurs cohérentes avec la marque (#23468C)
+5. Montrer les fonctionnalités principales
+6. Éviter les screenshots avec des données personnelles
+7. Utiliser des noms de joueurs génériques (Joueur 1, Joueur 2, etc.)
+
+
+-------------------------------------------
+OUTILS UTILES
+-------------------------------------------
+
+Screenshots :
+- Android Studio Emulator
+- https://screenshots.pro/ (ajouter des cadres)
+- https://mockuphone.com/ (mockups)
+
+Feature Graphic :
+- Canva : https://www.canva.com/
+- Figma : https://www.figma.com/
+- Photopea : https://www.photopea.com/ (gratuit)
+
+Icônes :
+- https://romannurik.github.io/AndroidAssetStudio/
+
+Compression d'images :
+- https://tinypng.com/
+- https://squoosh.app/
+
+
+===========================================
+FIN DU DOCUMENT
+===========================================

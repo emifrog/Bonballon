@@ -8,7 +8,7 @@
     <meta name="description" content="Bonballon, le générateur d&#039;équipes aléatoires.">
     <meta name="theme-color" content="#23468C">
     <link rel="manifest" href="manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Bonballon">
     <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
@@ -46,6 +46,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.html"><i class="fa fa-home"></i> Accueil</a></li>
                     <li><a href="history.html"><i class="fa fa-history"></i> Historique</a></li>
+                    <li><a href="competition.html"><i class="fa fa-trophy"></i> Compétition</a></li>
                     <li><a href="about.html"><i class="fa fa-info-circle"></i> A propos</a></li>
                     <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
                 </ul>
@@ -899,12 +900,83 @@
                     <input id="mix__token" name="mix[_token]" value="r9rFB6tUU38nCZJT0Jhy0cieFPgzs53d4OLiBU7F8DA"
                         type="hidden">
 
+                </div>
+
+            </div>
+
+            <!-- Section Contraintes Personnalisées -->
+            <div class="bg-dark-grey">
+                <div class="container padding-bloc">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="white-label">
+                                Personnalisées
+                                <small class="toggle-it" data-target="#constraints-section">
+                                    <i class="fa fa-chevron-down"></i> Afficher/Masquer
+                                </small>
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div id="constraints-section" style="display: none;">
+                        <!-- Joueurs ensemble/séparés -->
+                        <div class="row" style="margin-top: 20px;">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="white-label">
+                                        <i class="fa fa-users"></i> Joueurs qui doivent être ensemble
+                                    </label>
+                                    <div id="together-constraints">
+                                        <!-- Les contraintes seront ajoutées dynamiquement -->
+                                    </div>
+                                    <button type="button" id="add-together-constraint" class="btn grey-btn small-keamk-btn">
+                                        <i class="fa fa-plus"></i> Ajouter une contrainte
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="white-label">
+                                        <i class="fa fa-user-times"></i> Joueurs qui doivent être séparés
+                                    </label>
+                                    <div id="separated-constraints">
+                                        <!-- Les contraintes seront ajoutées dynamiquement -->
+                                    </div>
+                                    <button type="button" id="add-separated-constraint" class="btn grey-btn small-keamk-btn">
+                                        <i class="fa fa-plus"></i> Ajouter une contrainte
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Capitaines -->
+                        <div class="row" style="margin-top: 20px;">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="white-label">
+                                        <i class="fa fa-star"></i> Capitaines (un par équipe)
+                                    </label>
+                                    <div id="captains-list">
+                                        <!-- Les capitaines seront ajoutés dynamiquement -->
+                                    </div>
+                                    <button type="button" id="add-captain" class="btn grey-btn small-keamk-btn">
+                                        <i class="fa fa-plus"></i> Désigner un capitaine
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-grey">
+                <div class="container">
                     <div class="form-group btn-in-row padding-bloc-double">
                         <button type="submit" id="mix_save" name="mix[save]"
                             class="btn orange-btn large-keamk-btn">Générer les équipes</button>
                     </div>
                 </div>
-
             </div>
         </form>
     </div>
@@ -926,6 +998,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery/1.11.3/jquery.min.js"></script>
     <script src="bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/constraints.js"></script>
     <script src="js/main.js"></script>
     <script src="js/pwa.js"></script>
 

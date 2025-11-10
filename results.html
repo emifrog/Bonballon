@@ -29,6 +29,9 @@
     <!-- Bibliothèques pour l'export -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Chart.js pour les graphiques -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 
 <body>
@@ -48,6 +51,8 @@
             <nav id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.html"><i class="fa fa-home"></i> Accueil</a></li>
+                    <li><a href="history.html"><i class="fa fa-history"></i> Historique</a></li>
+                    <li><a href="competition.html"><i class="fa fa-trophy"></i> Compétition</a></li>
                     <li><a href="about.html"><i class="fa fa-info-circle"></i> A propos</a></li>
                     <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
                 </ul>
@@ -67,9 +72,53 @@
                 <!-- Les équipes seront insérées ici par JavaScript -->
             </div>
 
+            <!-- Section Statistiques (visible uniquement en mode niveau) -->
+            <div id="stats-section" style="display: none; margin-top: 40px;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-center" style="margin-bottom: 30px;">
+                            <i class="fa fa-chart-bar"></i> Statistiques de répartition
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Graphique de répartition des niveaux -->
+                    <div class="col-md-6">
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <h4 class="text-center">Répartition des niveaux par équipe</h4>
+                            <canvas id="levels-chart" style="max-height: 300px;"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Statistiques détaillées -->
+                    <div class="col-md-6">
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <h4 class="text-center">Équilibrage des équipes</h4>
+                            <div id="team-stats" style="margin-top: 20px;">
+                                <!-- Les stats seront insérées ici -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphique de distribution des joueurs par niveau -->
+                <div class="row" style="margin-top: 30px;">
+                    <div class="col-md-12">
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <h4 class="text-center">Distribution globale des joueurs par niveau</h4>
+                            <canvas id="players-distribution-chart" style="max-height: 250px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="text-center margin-top-20">
                 <button id="new-draw" class="btn orange-btn" onclick="window.location.href='index.html'">
                     <i class="fa fa-refresh"></i> Nouveau tirage
+                </button>
+                <button id="save-match" class="btn btn-primary" style="display: none;">
+                    <i class="fa fa-trophy"></i> Enregistrer le match
                 </button>
                 <button id="share-whatsapp" class="btn btn-success">
                     <i class="fab fa-whatsapp"></i> Partager
@@ -103,6 +152,8 @@
 
     <script src="js/jquery/1.11.3/jquery.min.js"></script>
     <script src="bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/competition.js"></script>
+    <script src="js/stats.js"></script>
     <script src="js/results.js"></script>
     <script src="js/pwa.js"></script>
 

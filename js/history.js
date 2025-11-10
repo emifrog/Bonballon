@@ -84,6 +84,9 @@ $(document).ready(function() {
     
     $('#history-container').html(historyHtml);
     
+    // Afficher le graphique d'évolution des écarts-types
+    displayStdDevChart();
+    
     // Gérer le clic sur "Voir détails"
     $('.view-details').click(function() {
         var index = $(this).data('index');
@@ -122,7 +125,95 @@ $(document).ready(function() {
     $('#clear-history').click(function() {
         if (confirm('Êtes-vous sûr de vouloir effacer tout l\'historique ? Cette action est irréversible.')) {
             localStorage.removeItem('drawHistory');
+            localStorage.removeItem('stdDevHistory');
             location.reload();
         }
     });
+    
+    // Fonction pour afficher le graphique d'évolution des écarts-types
+    function displayStdDevChart() {
+        if (!window.BonballonStats) return;
+        
+        var stdDevHistory = window.BonballonStats.getStdDevHistory();
+        
+        if (stdDevHistory.length === 0) {
+            return; // Pas de données à afficher
+        }
+        
+        // Afficher la section
+        $('#stddev-section').show();
+        
+        // Préparer les données (inverser pour avoir les plus anciens à gauche)
+        var reversedHistory = stdDevHistory.slice().reverse();
+        var labels = [];
+        var data = [];
+        
+        reversedHistory.forEach(function(item, index) {
+            var date = new Date(item.date);
+            labels.push(date.toLocaleDateString('fr-FR', { 
+                month: 'short', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            }));
+            data.push(item.stdDev);
+        });
+        
+        // Créer le graphique
+        var ctx = document.getElementById('stddev-chart');
+        if (!ctx) return;
+        
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Écart-type',
+                    data: data,
+                    borderColor: 'rgba(35, 70, 140, 1)',
+                    backgroundColor: 'rgba(35, 70, 140, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 4,
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return 'Écart-type: ' + context.parsed.y.toFixed(2);
+                            },
+                            afterLabel: function(context) {
+                                var item = reversedHistory[context.dataIndex];
+                                return 'Tirage: ' + item.title;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Écart-type'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Date et heure'
+                        }
+                    }
+                }
+            }
+        });
+    }
 });
