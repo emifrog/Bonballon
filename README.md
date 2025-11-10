@@ -1,4 +1,4 @@
-# 🏃 Bonballon - Générateur d'équipes intelligent
+# Bonballon - Générateur d'équipes intelligent
 
 [![PWA](https://img.shields.io/badge/PWA-Ready-blue)](https://web.dev/progressive-web-apps/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
